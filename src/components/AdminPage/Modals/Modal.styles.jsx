@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Select, TextField } from '@mui/material';
 import { AiOutlineClose } from 'react-icons/ai';
 
 export const Backdrop = styled.div`
@@ -7,12 +6,17 @@ export const Backdrop = styled.div`
   top: 0;
   left: 0;
   z-index: 1000;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 100%;
   background-color: rgba(25, 28, 38, 0.8);
+
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
 `;
 
 export const Modal = styled.div`
@@ -22,7 +26,10 @@ export const Modal = styled.div`
   // justify-content: center;
   padding: 50px;
   width: 800px;
-  background-color: white;
+  background-color: var(--white-color);
+
+  border: 4px solid var(--accent-color);
+  border-radius: 12px;
 `;
 
 export const Title = styled.h3`
@@ -32,26 +39,10 @@ export const Title = styled.h3`
   font-size: 24px;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: black;
-`;
-
-export const Label = styled.label`
-  width: 100%;
-`;
-
-export const Input = styled(TextField)`
-  width: 100%;
-`;
-
-export const FormSelect = styled(Select)`
-  width: 100%;
+export const Text = styled.p`
+  text-align: center;
+  font-size: 20px;
+  color: var(--black-color);
 `;
 
 export const CloseButton = styled.button`

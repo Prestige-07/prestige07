@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 
-import { Backdrop, Modal, Form, Title, CloseButton } from '../Modal.styles';
+import { ModalLayout } from '../ModalLayout';
+import { Title } from '../Modal.styles';
+import { Form, Label, Input } from 'components/Forms/Forms.styled';
 import { MainButton } from 'components/Global/Global.styled';
-import { TextField } from '@mui/material';
 
 import { addPhotosGroup } from 'redux/gallery/galleryOperations';
 import { useState } from 'react';
@@ -41,62 +42,59 @@ export const ModalAddPhotos = props => {
   });
 
   return (
-    <Backdrop onClick={handleBackdropClick}>
-      <Modal>
-        <CloseButton type="button" onClick={handleExitModal}>
-          Закрити
-        </CloseButton>
-        <Form onSubmit={formik.handleSubmit}>
-          <Title>Додати фото</Title>
-
-          <TextField
+    <ModalLayout
+      handleExitModal={handleExitModal}
+      handleBackdropClick={handleBackdropClick}
+    >
+      <Title>Додати фото</Title>
+      <Form onSubmit={formik.handleSubmit}>
+        <Label>
+          Фото до
+          <Input
             required
             type="file"
             id="beforePhoto"
             name="beforePhoto"
-            label="Фото до"
             value={formik.values.beforePhoto}
             onChange={e => setBefore(e.currentTarget.files[0])}
-            variant="standard"
-            className="field"
+            variant="outlined"
           />
-          <TextField
-            type="text"
-            id="beforeAlt"
-            name="beforeAlt"
-            label="Назва зображення"
-            value={formik.values.beforeAlt}
-            onChange={formik.handleChange}
-            variant="standard"
-            className="field"
-          />
-          <TextField
+        </Label>
+        <Input
+          type="text"
+          id="beforeAlt"
+          name="beforeAlt"
+          label="Назва зображення"
+          value={formik.values.beforeAlt}
+          onChange={formik.handleChange}
+          variant="outlined"
+        />
+        <Label>
+          Фото після
+          <Input
             required
             type="file"
             id="afterPhoto"
             name="afterPhoto"
-            label="Фото після"
             value={formik.values.afterPhoto}
             onChange={e => setAfter(e.currentTarget.files[0])}
-            variant="standard"
-            className="field"
+            variant="outlined"
           />
-          <TextField
-            type="text"
-            id="afterAlt"
-            name="afterAlt"
-            label="Назва зображення"
-            value={formik.values.afterAlt}
-            onChange={formik.handleChange}
-            variant="standard"
-            className="field"
-          />
+        </Label>
+        <Input
+          type="text"
+          id="afterAlt"
+          name="afterAlt"
+          label="Назва зображення"
+          value={formik.values.afterAlt}
+          onChange={formik.handleChange}
+          variant="outlined"
+        />
 
-          <MainButton type="submit" color="var(--black-color)">
-            Додати
-          </MainButton>
-        </Form>
-      </Modal>
-    </Backdrop>
+        <MainButton type="submit" color="var(--black-color)" margin={true}>
+          Додати
+        </MainButton>
+      </Form>
+    </ModalLayout>
   );
 };

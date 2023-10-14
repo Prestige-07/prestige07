@@ -1,6 +1,10 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
-import { getAllEmployees, addEmployee } from './employeesOperations';
+import {
+  getAllEmployees,
+  getAllEmployeesForUser,
+  addEmployee,
+} from './employeesOperations';
 
 const EmployeesInitialState = {
   items: [],
@@ -22,19 +26,32 @@ export const employeesSlice = createSlice({
       })
       .addCase(getAllEmployees.fulfilled, (state, action) => {
         return {
-          ...state,
+          items: action.payload,
+          isLoading: false,
+        };
+      })
+      .addCase(getAllEmployeesForUser.fulfilled, (state, action) => {
+        return {
           items: action.payload,
           isLoading: false,
         };
       })
       .addMatcher(
-        isAnyOf(addEmployee.pending, getAllEmployees.pending),
+        isAnyOf(
+          addEmployee.pending,
+          getAllEmployees.pending,
+          getAllEmployeesForUser.pending
+        ),
         state => {
           state.isLoading = true;
         }
       )
       .addMatcher(
-        isAnyOf(addEmployee.rejected, getAllEmployees.rejected),
+        isAnyOf(
+          addEmployee.rejected,
+          getAllEmployees.rejected,
+          getAllEmployeesForUser.rejected
+        ),
         (state, action) => {
           return { ...state, error: action.payload.message, isLoading: false };
         }

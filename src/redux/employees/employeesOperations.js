@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
-// axios.defaults.baseURL = 'http://localhost:3001/';
+// axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 export const addEmployee = createAsyncThunk(
   '/addEmployee',
@@ -20,9 +20,23 @@ export const addEmployee = createAsyncThunk(
 
 export const getAllEmployees = createAsyncThunk(
   '/getEmployees',
-  async (data, thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/api/employees', data);
+      const response = await axios.get('/api/employees');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue({
+        message: 'Невідома помилка завантаженя працівників',
+      });
+    }
+  }
+);
+
+export const getAllEmployeesForUser = createAsyncThunk(
+  '/getAllEmployeesForUser',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/api/employees/for-user');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue({

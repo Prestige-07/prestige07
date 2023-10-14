@@ -1,12 +1,9 @@
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import {
-  SearchForm,
-  DateLabel,
-  Input,
-  Button,
-} from './ReportSearchForm.styled';
 import { getReportingByDates } from 'redux/reporting/reportingOperations';
+
+import { MainButton } from 'components/Global/Global.styled';
+import { SearchForm, DateLabel, Input } from './ReportSearchForm.styled';
 
 export const ReportSearchForm = () => {
   const dispatch = useDispatch();
@@ -47,7 +44,9 @@ export const ReportSearchForm = () => {
           className="field"
         />
       </DateLabel>
-      <Button type="submit">Пошук</Button>
+      <MainButton type="submit" color="var(--black-color)">
+        Пошук
+      </MainButton>
     </SearchForm>
   );
 };

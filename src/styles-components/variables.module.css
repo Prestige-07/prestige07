@@ -7,11 +7,10 @@
   --copyright-color: #9a9c9e;
   --white-color: #ffffff;
   --black-color: #1e2124;
+  --label-color: #757575;
 
   /* backgrounds */
-  /* --primary-bg-color: #1e2124; */
   --primary-bg-color: #1e2124;
-
   --secondary-bg-color: #36393e;
   --form-bg-color: #d6d7d8;
   --header-bg-color: linear-gradient(

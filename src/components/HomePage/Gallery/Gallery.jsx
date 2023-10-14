@@ -1,22 +1,22 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect } from 'react';
 import Slider from 'react-slick';
 
-import { getGallery } from 'redux/gallery/galleryOperations';
-import { selectGallery } from 'redux/gallery/gallerySelectors';
+// import { getGallery } from 'redux/gallery/galleryOperations';
+// import { selectGallery } from 'redux/gallery/gallerySelectors';
 
 import lanos from '../../../images/lanos.webp';
 import panamera from '../../../images/panamera.webp';
 
 export const Gallery = () => {
-  const gallery = useSelector(selectGallery);
-  const dispatch = useDispatch();
+  // const gallery = useSelector(selectGallery);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getGallery());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getGallery());
+  // }, [dispatch]);
 
-  console.log(gallery);
+  // console.log(...gallery);
 
   const settings = {
     dots: true,
@@ -58,8 +58,8 @@ export const Gallery = () => {
             </div>
           ))}
           {/* {gallery.map((item, index) => (
-            <div key={item._id}>
-              <div className="image-container">
+            <div style={{ display: 'flex' }}>
+              <div className="image-container" key={item.beforePhoto.url}>
                 <img
                   src={item.beforePhoto.url}
                   alt="Example"
@@ -68,7 +68,7 @@ export const Gallery = () => {
                 />
                 <h3 className="description">До</h3>
               </div>
-              <div className="image-container">
+              <div className="image-container" key={item.afterPhoto.url}>
                 <img
                   src={item.afterPhoto.url}
                   alt="Example"

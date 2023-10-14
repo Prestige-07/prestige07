@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 
-import { Backdrop, Modal, Form, Title, CloseButton } from '../Modal.styles';
-import { TextField } from '@mui/material';
+import { ModalLayout } from '../ModalLayout';
+import { Title } from '../Modal.styles';
+import { Form, Input } from '../../../Forms/Forms.styled';
+import { MainButton } from 'components/Global/Global.styled';
 
 import { selectOrderByNumber } from 'redux/orders/ordersSelectors';
 import { updateOrderByNumber } from 'redux/orders/ordersOperations';
@@ -35,29 +37,27 @@ export const ModalAddDiscount = props => {
   });
 
   return (
-    <Backdrop onClick={handleBackdropClick}>
-      <Modal>
-        <CloseButton type="button" onClick={handleExitModal}>
-          Закрити
-        </CloseButton>
-        <Form onSubmit={formik.handleSubmit}>
-          <Title>Додати знижку</Title>
-          <TextField
-            required
-            type="text"
-            id="discountPercent"
-            name="discountPercent"
-            label="Відсоток знижки"
-            value={formik.values.discountPercent}
-            onChange={formik.handleChange}
-            variant="standard"
-            className="field"
-          />
-          <button type="submit" className="btn">
-            Додати
-          </button>
-        </Form>
-      </Modal>
-    </Backdrop>
+    <ModalLayout
+      handleExitModal={handleExitModal}
+      handleBackdropClick={handleBackdropClick}
+    >
+      <Title>Додати знижку</Title>
+      <Form onSubmit={formik.handleSubmit}>
+        <Input
+          required
+          type="number"
+          inputProps={{ min: '0' }}
+          id="discountPercent"
+          name="discountPercent"
+          label="Відсоток знижки"
+          value={formik.values.discountPercent}
+          onChange={formik.handleChange}
+          variant="outlined"
+        />
+        <MainButton type="submit" color="var(--black-color)" margin={true}>
+          Додати
+        </MainButton>
+      </Form>
+    </ModalLayout>
   );
 };

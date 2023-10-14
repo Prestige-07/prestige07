@@ -3,6 +3,7 @@
 @import './styles-components/variables.module.css';
 @import './styles-components/base.module.css';
 @import './styles-components/utils.module.css';
+@import './styles-components/animations.css';
 /* Clients page */
 @import './styles-components/section.module.css';
 @import './styles-components/container.module.css';
