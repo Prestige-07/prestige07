@@ -1,27 +1,13 @@
 .btn {
-  /* padding: 0; */
   min-height: 50px;
   min-width: 200px;
 
-  /* color: var(--primary-white-color);
-  background-color: #188ce8; */
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0px 0px 20px var(--accent-color);
 
-  /* font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px; */
-
-  /* transition: background-color var(--transition);
-
-  &:hover,
-  &:focus {
-    background-color: var(--accent-color);
-  } */
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 
   color: var(--black-color);
   background-color: transparent;
@@ -34,6 +20,8 @@
   &:hover,
   &:focus {
     background-color: var(--accent-color);
-    color: var(--white-color);
+    /* color: var(--white-color);
+     */
+    color: var(--black-color);
   }
 }

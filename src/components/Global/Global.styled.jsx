@@ -41,8 +41,8 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Section = styled.section`
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   @media screen and (min-width: 768px) {
     padding-top: 80px;
@@ -69,8 +69,10 @@ export const MainButton = styled.button`
   margin: ${props => props.margin && `0 auto`};
   height: 50px;
   min-width: 200px;
+
   color: ${props => (props.color ? props.color : 'var(--white-color)')};
   background-color: transparent;
+  box-shadow: 0px 0px 20px var(--accent-color);
 
   border-radius: 25px;
   border: 1px solid var(--accent-color);
@@ -80,7 +82,7 @@ export const MainButton = styled.button`
   &:hover,
   &:focus {
     background-color: var(--accent-color);
-    color: var(--white-color);
+    color: var(--black-color);
   }
 
   opacity: 0;

@@ -17,6 +17,8 @@
 }
 
 .logo {
+  position: relative;
+  z-index: 100;
   fill: var(--accent-color);
 }
 
@@ -34,6 +36,11 @@
   color: var(--header-text-color);
   fill: currentColor;
 
+  /* font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em; */
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -43,7 +50,7 @@
   transition: color var(--transition);
 }
 
-.nav {
+.nav__list {
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 30px;
@@ -92,4 +99,22 @@
   justify-content: center;
   align-items: center;
   color: var(--primary-text-color);
+}
+
+.menu__btn {
+  position: relative;
+  z-index: 100;
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu__icon {
+  width: 25px;
+  height: 25px;
+  color: var(--accent-color);
 }

@@ -1,25 +1,39 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
+import { Spin } from 'hamburger-react';
 import { GiExitDoor } from 'react-icons/gi';
 
-export const Wrapper = styled.div`
-  padding: 20px;
-  width: 300px;
+export const MenuWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100vh;
-  background-color: var(--secondary-bg-color);
-
-  @media screen and (max-width: 767px) {
+  background-color: var(--primary-bg-color);
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;
 
 export const UserWrapper = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  column-gap: 12px;
-  margin-bottom: 80px;
+  gap: 20px;
+  margin-bottom: 20px;
+`;
+
+export const UserName = styled.p`
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  border-radius: 12px;
 `;
 
 export const UserIcon = styled(FiUser)`
@@ -28,13 +42,6 @@ export const UserIcon = styled(FiUser)`
   color: var(--accent-color);
   background-color: var(--admin-items-bg-color);
   border-radius: 8px;
-`;
-
-export const UserName = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
 `;
 
 export const Logout = styled.button`
@@ -62,6 +69,7 @@ export const PageLink = styled(NavLink)`
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+  width: 100vh;
 
   color: #ffffff;
 
@@ -76,3 +84,20 @@ export const PageLink = styled(NavLink)`
     background-color: var(--admin-items-bg-color);
   }
 `;
+
+export const MenuButton = styled.button`
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  z-index: 100;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const MenuIcon = styled(Spin)``;

@@ -8,6 +8,7 @@ import { Loading } from 'components/Loading/Loading';
 
 import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 import { refresh } from 'redux/auth/authOperations';
+import { MobileAdminMenu } from 'components/AdminPage/MobileAdminMenu/MobileAdminMenu';
 
 const Admin = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,6 +45,7 @@ const Admin = () => {
 
   return (
     <div style={{ display: 'flex' }}>
+      <MobileAdminMenu />
       <Sidebar />
       <AdminContainer>
         <Outlet />

@@ -16,5 +16,3 @@
 @import './components/HomePage/Contacts/Contacts.module.css';
 @import './components/HomePage/Reserve/Reserve.module.css';
 @import './components/HomePage/Footer/Footer.module.css';
-/* Admin page */
-@import './components/AdminPage/Sidebar/Sidebar.module.css';

@@ -11,6 +11,8 @@ export const Item = styled.li`
   flex-direction: column;
   gap: 12px;
   padding: 8px;
+  width: max-content;
+
   background-color: var(--secondary-bg-color);
   border-radius: 8px;
 
