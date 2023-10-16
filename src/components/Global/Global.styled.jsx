@@ -24,9 +24,12 @@ export const Container = styled.div`
 `;
 
 export const AdminContainer = styled.div`
-  padding: 0 40px;
+  padding: 0 15px;
   width: 100%;
   @media screen and (min-width: 768px) {
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 1200px) {
     padding: 0 80px;
   }
 `;

@@ -88,8 +88,9 @@ export const PageLink = styled(NavLink)`
 export const MenuButton = styled.button`
   position: fixed;
   top: 10px;
-  left: 20px;
+  left: 10px;
   z-index: 100;
+  padding: 0;
 
   background-color: transparent;
   border: none;

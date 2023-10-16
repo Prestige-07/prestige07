@@ -35,7 +35,7 @@ export const StatusButton = styled.button`
   background-color: ${props => props.color};
   padding: 5px;
   margin-left: auto;
-  min-width: 75px;
+  width: 80px;
   border: none;
   border-radius: 8px;
 `;
@@ -53,7 +53,7 @@ export const LeftSide = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 470px;
+  // width: 470px;
 `;
 
 export const Text = styled.p``;

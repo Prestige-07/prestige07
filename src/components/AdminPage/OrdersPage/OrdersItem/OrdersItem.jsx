@@ -6,11 +6,6 @@ import {
   StatusButton,
   PartContainer,
   Text,
-  // Table,
-  // TableHead,
-  // TableRow,
-  // TableHeader,
-  // TableData,
   LeftSide,
 } from './OrdersItem.styled';
 
@@ -57,29 +52,6 @@ export const OrdersItem = ({ order }) => {
             )}`}</Text>
           )}
         </LeftSide>
-
-        {/* {order.services.length > 0 && (
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableHeader>Назва</TableHeader>
-                <TableHeader>Кількість</TableHeader>
-                <TableHeader>Вартість</TableHeader>
-                <TableHeader>Сума</TableHeader>
-              </TableRow>
-            </TableHead>
-            <tbody>
-              {order.services.map(service => (
-                <TableRow key={service._id}>
-                  <TableData>{service.name}</TableData>
-                  <TableData>{service.amount ? service.amount : 1}</TableData>
-                  <TableData>{service.price}</TableData>
-                  <TableData>{service.price * (service.amount || 1)}</TableData>
-                </TableRow>
-              ))}
-            </tbody>
-          </Table>
-        )} */}
       </PartContainer>
 
       <hr />

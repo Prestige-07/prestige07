@@ -61,7 +61,7 @@ export const ReserveButton = styled.a`
   text-decoration: none;
 
   color: var(--white-color);
-  box-shadow: 0px 4px 4px var(--accent-color);
+  box-shadow: 0px 0px 20px var(--accent-color);
 
   border-radius: 25px;
   border: 1px solid var(--accent-color);
