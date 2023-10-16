@@ -1,10 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
-axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
-// axios.defaults.baseURL = 'http://localhost:3001/';
-// const errorMsg = "Something's wrong. Please update page and try again";
+// axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 export const getReportingByDates = createAsyncThunk(
   'reports/getReportingByDates',
@@ -15,7 +14,8 @@ export const getReportingByDates = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      toast.error(error.response.data.message);
+      return thunkAPI.rejectWithValue(error.response.data);
     }
   }
 );

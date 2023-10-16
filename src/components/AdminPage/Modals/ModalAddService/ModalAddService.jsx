@@ -37,7 +37,6 @@ export const ModalAddService = props => {
       employeePercent: '',
     },
     onSubmit: values => {
-      console.log(values);
       dispatch(addService(values));
       handleExitModal();
     },

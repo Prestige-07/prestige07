@@ -9,6 +9,7 @@ const AuthInitialState = {
   },
   administrators: [],
   token: null,
+  refreshToken: null,
   isLoggedIn: false,
   isLoading: false,
   error: null,
@@ -22,12 +23,14 @@ export const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.user.email = action.payload.email;
         state.token = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
         state.isLoggedIn = true;
         state.isLoading = false;
       })
       .addCase(logout.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
+        state.refreshToken = null;
         state.isLoggedIn = false;
         state.isLoading = false;
       })
