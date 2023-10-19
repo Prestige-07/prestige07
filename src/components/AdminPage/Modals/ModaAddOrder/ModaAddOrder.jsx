@@ -83,6 +83,7 @@ export const ModaAddOrder = props => {
           value={formik.values.clientName}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Input
           required
@@ -93,6 +94,7 @@ export const ModaAddOrder = props => {
           value={formik.values.clientPhone}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Input
           required
@@ -103,6 +105,7 @@ export const ModaAddOrder = props => {
           value={formik.values.serviceObject}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Label>
           <LabelText>Час заїзду *</LabelText>
@@ -114,6 +117,7 @@ export const ModaAddOrder = props => {
             value={formik.values.orderDate}
             onChange={formik.handleChange}
             variant="outlined"
+            size="small"
           />
         </Label>
         <Label>
@@ -125,6 +129,7 @@ export const ModaAddOrder = props => {
             value={formik.values.services}
             onChange={formik.handleChange}
             variant="outlined"
+            size="small"
           >
             {services.map(service => (
               <SelectOption value={service} key={service._id}>
@@ -141,6 +146,7 @@ export const ModaAddOrder = props => {
             value={formik.values.washer}
             onChange={formik.handleChange}
             variant="outlined"
+            size="small"
           >
             {employees.map(washer => (
               <SelectOption value={washer.name} key={washer._id}>
@@ -158,7 +164,6 @@ export const ModaAddOrder = props => {
           />
           Терміново!
         </Label>
-
         <MainButton type="submit" color="var(--black-color)" margin={true}>
           Додати
         </MainButton>

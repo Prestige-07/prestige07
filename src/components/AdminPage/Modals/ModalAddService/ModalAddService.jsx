@@ -3,14 +3,7 @@ import { useFormik } from 'formik';
 
 import { ModalLayout } from '../ModalLayout';
 import { Title } from '../Modal.styles';
-import {
-  Form,
-  Label,
-  FormSelect,
-  Input,
-  FormCheckbox,
-  SelectOption,
-} from '../../../Forms/Forms.styled';
+import { Form, Label, Input, FormCheckbox } from '../../../Forms/Forms.styled';
 import { MainButton } from 'components/Global/Global.styled';
 
 import { addService } from 'redux/services/servicesOperations';
@@ -30,7 +23,6 @@ export const ModalAddService = props => {
 
   const formik = useFormik({
     initialValues: {
-      category: '',
       name: '',
       price: '',
       pricePerMeter: false,
@@ -49,20 +41,6 @@ export const ModalAddService = props => {
     >
       <Title>Додати послугу</Title>
       <Form onSubmit={formik.handleSubmit}>
-        <Label id="category-label">Оберіть об'єкт послуги</Label>
-        <FormSelect
-          required
-          labelId="category-label"
-          id="category"
-          name="category"
-          value={formik.values.category}
-          onChange={formik.handleChange}
-          variant="outlined"
-        >
-          <SelectOption value="Авто">Авто</SelectOption>
-          <SelectOption value="Килим">Килим</SelectOption>
-        </FormSelect>
-
         <Input
           required
           type="text"
@@ -72,6 +50,7 @@ export const ModalAddService = props => {
           value={formik.values.name}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Input
           required
@@ -82,6 +61,7 @@ export const ModalAddService = props => {
           value={formik.values.price}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Label>
           <FormCheckbox
@@ -105,6 +85,7 @@ export const ModalAddService = props => {
           value={formik.values.employeePercent}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
 
         <MainButton type="submit" color="var(--black-color)" margin={true}>

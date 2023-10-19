@@ -58,6 +58,7 @@ export const ModalAddPhotos = props => {
             value={formik.values.beforePhoto}
             onChange={e => setBefore(e.currentTarget.files[0])}
             variant="outlined"
+            size="small"
           />
         </Label>
         <Input
@@ -68,6 +69,7 @@ export const ModalAddPhotos = props => {
           value={formik.values.beforeAlt}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Label>
           Фото після
@@ -79,6 +81,7 @@ export const ModalAddPhotos = props => {
             value={formik.values.afterPhoto}
             onChange={e => setAfter(e.currentTarget.files[0])}
             variant="outlined"
+            size="small"
           />
         </Label>
         <Input
@@ -89,6 +92,7 @@ export const ModalAddPhotos = props => {
           value={formik.values.afterAlt}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
 
         <MainButton type="submit" color="var(--black-color)" margin={true}>

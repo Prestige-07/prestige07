@@ -1,15 +1,12 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import instance from 'redux/auth/authOperations';
 import toast from 'react-hot-toast';
-
-axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
-// axios.defaults.baseURL = 'http://localhost:3001/';
 
 export const addPhotosGroup = createAsyncThunk(
   '/addPhotosGroup',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post('/api/gallery', data);
+      const response = await instance.post('/api/gallery', data);
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -22,7 +19,7 @@ export const getGallery = createAsyncThunk(
   '/getGallery',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/api/gallery');
+      const response = await instance.get('/api/gallery');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -35,7 +32,7 @@ export const deletePhotosGroup = createAsyncThunk(
   '/deletePhotosGroup',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/api/gallery/${id}`);
+      const response = await instance.delete(`/api/gallery/${id}`);
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);

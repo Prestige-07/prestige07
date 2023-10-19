@@ -1,15 +1,12 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import instance from 'redux/auth/authOperations';
 import toast from 'react-hot-toast';
-
-axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
-// axios.defaults.baseURL = 'http://localhost:3001/';
 
 export const addEmployee = createAsyncThunk(
   '/addEmployee',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post('/api/employees', data);
+      const response = await instance.post('/api/employees', data);
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -22,7 +19,7 @@ export const getAllEmployees = createAsyncThunk(
   '/getEmployees',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/api/employees');
+      const response = await instance.get('/api/employees');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -35,11 +32,39 @@ export const getAllEmployeesForUser = createAsyncThunk(
   '/getAllEmployeesForUser',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/api/employees/for-user');
+      const response = await instance.get('/api/employees/for-user');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
       return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const updateEmployeeById = createAsyncThunk(
+  '/updateEmployeeById',
+  async ({ _id, data }, thunkApi) => {
+    try {
+      const response = await instance.post(`/api/employees/${_id}/update`, {
+        ...data,
+      });
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.message);
+      return thunkApi.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const deleteEmployeeById = createAsyncThunk(
+  '/deleteEmployeeById',
+  async (id, thunkApi) => {
+    try {
+      const response = await instance.delete(`/api/employees/${id}/delete`);
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.message);
+      return thunkApi.rejectWithValue(error.response.data);
     }
   }
 );

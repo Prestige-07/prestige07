@@ -24,23 +24,22 @@ export const Status = styled.div`
   position: relative;
   display: inline-block;
   margin-left: auto;
-  transition: scale var(--transition);
+  opacity: 0.6;
+  transition: opacity var(--transition);
   &:hover {
-    scale: 1.1;
+    opacity: 1;
   }
 `;
 
 export const StatusButton = styled.div`
   display: inline-block;
   padding: 10px;
-  //   background-color: #007bff;
   background-color: ${props => props.color};
   color: var(--black-color);
   cursor: pointer;
   border: none;
   border-radius: 5px;
   position: relative;
-
   &:hover {
     background-color: #0056b3;
   }

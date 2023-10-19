@@ -84,7 +84,7 @@ export const OrderServices = ({ services, orderNumber }) => {
             <option value=""></option>
             {allServices.map(service => (
               <option value={JSON.stringify(service)} key={service._id}>
-                {`${service.category}. ${service.name}. ${service.price}грн`}
+                {`${service.name}. ${service.price}грн`}
               </option>
             ))}
           </ServicesSelect>

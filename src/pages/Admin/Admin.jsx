@@ -7,7 +7,7 @@ import { AdminContainer } from 'components/Global/Global.styled';
 import { Loading } from 'components/Loading/Loading';
 
 import { selectIsLoggedIn } from 'redux/auth/authSelectors';
-import { refresh } from 'redux/auth/authOperations';
+import { getCurrentUser } from 'redux/auth/authOperations';
 import { MobileAdminMenu } from 'components/AdminPage/MobileAdminMenu/MobileAdminMenu';
 
 const Admin = () => {
@@ -20,12 +20,12 @@ const Admin = () => {
   useEffect(() => {
     const LocalStoreToken = localStorage.getItem('persist:auth');
     if (LocalStoreToken) {
-      dispatch(refresh())
+      dispatch(getCurrentUser())
         .then(() => {
           setIsLoading(false);
         })
         .catch(error => {
-          console.error('Error refreshing token:', error);
+          alert('Error refreshing token:', error);
           setIsLoading(false);
         });
     } else {

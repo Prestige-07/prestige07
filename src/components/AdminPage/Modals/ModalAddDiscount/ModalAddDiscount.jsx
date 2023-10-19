@@ -53,6 +53,7 @@ export const ModalAddDiscount = props => {
           value={formik.values.discountPercent}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <MainButton type="submit" color="var(--black-color)" margin={true}>
           Додати

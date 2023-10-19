@@ -50,6 +50,7 @@ export const ModalAddEmployee = props => {
           value={formik.values.name}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Input
           required
@@ -60,6 +61,7 @@ export const ModalAddEmployee = props => {
           value={formik.values.phone}
           onChange={formik.handleChange}
           variant="outlined"
+          size="small"
         />
         <Label>
           Працює з:
@@ -71,6 +73,7 @@ export const ModalAddEmployee = props => {
             value={formik.values.worksFromDate}
             onChange={formik.handleChange}
             variant="outlined"
+            size="small"
           />
         </Label>
         <Label>

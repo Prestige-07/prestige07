@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  useDispatch,
+  // useSelector
+} from 'react-redux';
 
+import { getAllServices } from 'redux/services/servicesOperations';
+
+import { ServicesList } from 'components/AdminPage/ServicesPage/ServicesList/ServicesList';
 import {
   Section,
   HeaderContainer,
@@ -9,12 +15,7 @@ import {
 } from 'components/Global/Global.styled';
 import { ModalAddService } from 'components/AdminPage/Modals/ModalAddService/ModalAddService';
 
-import { getAllServices } from 'redux/services/servicesOperations';
-import { selectGetAllServices } from 'redux/services/servicesSelectors';
-
 const ServicesPage = () => {
-  const services = useSelector(selectGetAllServices);
-
   const [isOpenModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
 
@@ -35,21 +36,8 @@ const ServicesPage = () => {
         </MainButton>
       </HeaderContainer>
 
-      <ul
-        className="list"
-        style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-      >
-        {services.map(service => (
-          <li key={service._id}>
-            <p>{`Об'єкт послуги: ${service.category}`}</p>
-            <p>{`Назва послуги: ${service.name}`}</p>
-            <p>{`Вартість: ${service.price} грн${
-              service.pricePerMeter ? '/м²' : ''
-            }`}</p>
-            <p>{`Відсоток працівника: ${service.employeePercent}%`}</p>
-          </li>
-        ))}
-      </ul>
+      <ServicesList />
+
       {isOpenModal && <ModalAddService handleExitModal={handleExitModal} />}
     </Section>
   );

@@ -1,15 +1,12 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import instance from 'redux/auth/authOperations';
 import toast from 'react-hot-toast';
-
-axios.defaults.baseURL = 'https://car-washing-backend.onrender.com';
-// axios.defaults.baseURL = 'http://localhost:3001/';
 
 export const getReportingByDates = createAsyncThunk(
   'reports/getReportingByDates',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.get('/api/reporting', {
+      const response = await instance.get('/api/reporting', {
         params: data,
       });
       return response.data;
