@@ -23,7 +23,7 @@ export const employeesSlice = createSlice({
         return {
           ...state,
           items: [...state.items, action.payload],
-          isLoading: false,
+          // isLoading: false,
         };
       })
       .addCase(getAllEmployees.fulfilled, (state, action) => {
@@ -40,7 +40,7 @@ export const employeesSlice = createSlice({
         if (employeeIndex !== -1) {
           state.items[employeeIndex] = updatedEmployee;
         }
-        state.isLoading = false;
+        // state.isLoading = false;
       })
       .addCase(deleteEmployeeById.fulfilled, (state, action) => {
         const deletedEmployee = action.payload;
@@ -48,7 +48,7 @@ export const employeesSlice = createSlice({
           employee => employee._id !== deletedEmployee._id
         );
         state.items = updatedEmployees;
-        state.isLoading = false;
+        // state.isLoading = false;
       })
       .addCase(getAllEmployeesForUser.fulfilled, (state, action) => {
         return {
@@ -58,11 +58,11 @@ export const employeesSlice = createSlice({
       })
       .addMatcher(
         isAnyOf(
-          addEmployee.pending,
+          // addEmployee.pending,
           getAllEmployees.pending,
-          getAllEmployeesForUser.pending,
-          updateEmployeeById.pending,
-          deleteEmployeeById.pending
+          getAllEmployeesForUser.pending
+          // updateEmployeeById.pending,
+          // deleteEmployeeById.pending
         ),
         state => {
           state.isLoading = true;

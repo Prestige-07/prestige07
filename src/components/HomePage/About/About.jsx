@@ -1,54 +1,53 @@
+import {
+  MainContainer,
+  Section,
+  SectionTitle,
+} from 'components/Global/Global.styled';
+import { Text, FeaturesTitle, FeaturesList, StrongText } from './About.styled';
+
 export const About = () => {
   return (
-    <section className="section" id="about">
-      <div className="container">
-        <h2 className="section__title">Про нас</h2>
-        <p className="about__text">
+    <Section id="about">
+      <MainContainer>
+        <SectionTitle>Про нас</SectionTitle>
+        <Text>
           Ми - команда професіоналів, які присвятили себе догляду за вашими
           автомобілями. Наша мета - зробити ваш транспортний засіб як новий і
           забезпечити вам найкращий досвід обслуговування.
-        </p>
+        </Text>
 
-        <h3 className="features__title">Чому саме ми?</h3>
-        <ul className="features__list">
+        <FeaturesTitle>Чому саме ми?</FeaturesTitle>
+        <FeaturesList>
           <li>
-            <p className="features__text">
-              <strong className="features__strong-text">
-                Досвід та професіоналізм.&nbsp;
-              </strong>
+            <Text>
+              <StrongText>Досвід та професіоналізм.</StrongText>
               Наша команда складається з висококваліфікованих фахівців, які
               знають, як зробити ваш автомобіль сяючим і чистим.
-            </p>
+            </Text>
           </li>
           <li>
-            <p className="features__text">
-              <strong className="features__strong-text">
-                Сучасне обладнання.&nbsp;
-              </strong>
+            <Text>
+              <StrongText>Сучасне обладнання.</StrongText>
               Ми використовуємо найновішу технологію та обладнання, щоб
               забезпечити вам найкращий результат.
-            </p>
+            </Text>
           </li>
           <li>
-            <p className="features__text">
-              <strong className="features__strong-text">
-                Екологічність.&nbsp;
-              </strong>
+            <Text>
+              <StrongText>Екологічність.</StrongText>
               Ми пильно стежимо за екологічністю наших послуг та використовуємо
               екологічно чисті засоби для догляду за автомобілем.
-            </p>
+            </Text>
           </li>
           <li>
-            <p className="features__text">
-              <strong className="features__strong-text">
-                Зручний сервіс.&nbsp;
-              </strong>
+            <Text>
+              <StrongText>Зручний сервіс.</StrongText>
               Ми розуміємо, що ваш час дорогоцінний, тому ми пропонуємо швидке
               та зручне обслуговування без зайвої затримки.
-            </p>
+            </Text>
           </li>
-        </ul>
-      </div>
-    </section>
+        </FeaturesList>
+      </MainContainer>
+    </Section>
   );
 };

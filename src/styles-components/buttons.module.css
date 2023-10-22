@@ -4,10 +4,9 @@
 
   box-shadow: 0px 0px 20px var(--accent-color);
 
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.02em;
 
   color: var(--black-color);
   background-color: transparent;
@@ -20,8 +19,6 @@
   &:hover,
   &:focus {
     background-color: var(--accent-color);
-    /* color: var(--white-color);
-     */
     color: var(--black-color);
   }
 }

@@ -1,26 +1,22 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-  padding-left: 50px;
-  padding-right: 50px;
-  // max-width: 1200px;
+export const MainContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  // margin-left: auto;
-  // margin-right: auto;
-  // padding-left: 15px;
-  // padding-right: 15px;
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+  }
 
-  // @media screen and (min-width: 480px) {
-  //   max-width: 480px;
-  // }
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
 
-  // @media screen and (min-width: 768px) {
-  //   max-width: 768px;
-  // }
-
-  // @media screen and (min-width: 1200px) {
-  //   max-width: 1200px;
-  // }
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
 `;
 
 export const AdminContainer = styled.div`
@@ -44,25 +40,25 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Section = styled.section`
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  // padding-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     padding-top: 80px;
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
   }
 `;
 
 export const SectionTitle = styled.h2`
-text - align: center;
-  // margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 
   font-weight: 700;
   font-size: 28px;
   line-height: 1.17;
 
   @media screen and (min-width: 1200px) {
-    // margin-bottom: 50px;
+    margin-bottom: 50px;
 
     font-size: 36px;
   }
@@ -77,6 +73,10 @@ export const MainButton = styled.button`
   background-color: transparent;
   box-shadow: 0px 0px 20px var(--accent-color);
 
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+
   border-radius: 25px;
   border: 1px solid var(--accent-color);
   cursor: pointer;
@@ -90,4 +90,37 @@ export const MainButton = styled.button`
 
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out forwards;
+`;
+
+export const MainLinkButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 50px;
+  min-width: 200px;
+
+  box-shadow: 0px 0px 20px var(--accent-color);
+
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 12px;
+  }
+
+  color: var(--white-color);
+  background-color: transparent;
+
+  border-radius: 25px;
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--black-color);
+  }
 `;

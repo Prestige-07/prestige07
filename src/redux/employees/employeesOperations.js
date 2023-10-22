@@ -7,6 +7,7 @@ export const addEmployee = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await instance.post('/api/employees', data);
+      toast.success('Працівника додано успішно');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -48,6 +49,7 @@ export const updateEmployeeById = createAsyncThunk(
       const response = await instance.post(`/api/employees/${_id}/update`, {
         ...data,
       });
+      toast.success('Дані працівника оновлено успішно');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -61,6 +63,7 @@ export const deleteEmployeeById = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const response = await instance.delete(`/api/employees/${id}/delete`);
+      toast.success('Працівника видалено успішно');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);

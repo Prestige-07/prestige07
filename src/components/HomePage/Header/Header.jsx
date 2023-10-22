@@ -1,7 +1,19 @@
 import { useState } from 'react';
-import { ReactComponent as Logo } from '../../../images/icons/logo-without-star.svg';
 
-import { Spin as Hamburger } from 'hamburger-react';
+import { MainContainer, MainLinkButton } from 'components/Global/Global.styled';
+import {
+  HeaderWrapper,
+  HeaderContainer,
+  Logo,
+  Navigation,
+  NavList,
+  NavItem,
+  Link,
+  Contacts,
+  TelIcon,
+  MenuButton,
+  MenuIcon,
+} from './Header.styled';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 
 export const Header = () => {
@@ -12,57 +24,53 @@ export const Header = () => {
   };
 
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header__container">
+    <HeaderWrapper>
+      <MainContainer>
+        <HeaderContainer>
           <a href="#home" onClick={() => handleExitMenu()}>
-            <Logo width="60px" height="60px" className="logo" />
+            <Logo />
           </a>
 
-          <nav className="nav">
-            <ul className="nav__list list">
-              <li className="nav__item">
-                <a href="#home" className="nav__link">
+          <Navigation>
+            <NavList>
+              <NavItem>
+                <Link href="#home" paddingTop="32px" paddingBottom="32px">
                   Головна
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#about" className="nav__link">
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="#about" paddingTop="32px" paddingBottom="32px">
                   Про нас
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#services" className="nav__link">
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="#services" paddingTop="32px" paddingBottom="32px">
                   Послуги
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#gallery" className="nav__link">
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="#gallery" paddingTop="32px" paddingBottom="32px">
                   Наші роботи
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="#contacts" className="nav__link">
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="#contacts" paddingTop="32px" paddingBottom="32px">
                   Контакти
-                </a>
-              </li>
-            </ul>
-          </nav>
+                </Link>
+              </NavItem>
+            </NavList>
+          </Navigation>
 
-          <div className="header-contacts">
-            <a href="tel:+380961111111" className="header-contacts__link">
-              <svg className="contacts__icon" width="20px" height="20px">
-                <use href="./images/icons.svg#tel"></use>
-              </svg>
+          <Contacts>
+            <Link href="tel:+380961111111">
+              <TelIcon />
               +38 096 111 11 11
-            </a>
-            <a href="#reserve" className="btn header__btn">
-              Замовити послугу
-            </a>
-          </div>
+            </Link>
+            <MainLinkButton href="#reserve">Замовити послугу</MainLinkButton>
+          </Contacts>
 
-          <button type="button" className="menu__btn">
-            <Hamburger
+          <MenuButton type="button">
+            <MenuIcon
               toggled={isOpen}
               toggle={setIsOpen}
               rounded
@@ -72,10 +80,10 @@ export const Header = () => {
               distance="lg"
               duration={0.7}
             />
-          </button>
-        </div>
+          </MenuButton>
+        </HeaderContainer>
         {isOpen && <MobileMenu handleExitMenu={handleExitMenu} />}
-      </div>
-    </header>
+      </MainContainer>
+    </HeaderWrapper>
   );
 };

@@ -7,6 +7,7 @@ export const addPhotosGroup = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await instance.post('/api/gallery', data);
+      toast.success('Фото завантажено успішно');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -33,6 +34,7 @@ export const deletePhotosGroup = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await instance.delete(`/api/gallery/${id}`);
+      toast.success('Фото видалено успішно');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);

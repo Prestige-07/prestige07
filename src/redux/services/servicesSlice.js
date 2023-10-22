@@ -20,7 +20,7 @@ export const servicesSlice = createSlice({
     builder
       .addCase(addService.fulfilled, (state, action) => {
         state.items.push(action.payload);
-        state.isLoading = false;
+        // state.isLoading = false;
       })
       .addCase(getAllServices.fulfilled, (state, action) => {
         state.items = action.payload;
@@ -34,7 +34,7 @@ export const servicesSlice = createSlice({
         if (serviceIndex !== -1) {
           state.items[serviceIndex] = updatedService;
         }
-        state.isLoading = false;
+        // state.isLoading = false;
       })
       .addCase(deleteServiceById.fulfilled, (state, action) => {
         const deletedService = action.payload;
@@ -42,14 +42,14 @@ export const servicesSlice = createSlice({
           service => service._id !== deletedService._id
         );
         state.items = updatedServices;
-        state.isLoading = false;
+        // state.isLoading = false;
       })
       .addMatcher(
         isAnyOf(
-          addService.pending,
-          getAllServices.pending,
-          updateServiceById.pending,
-          deleteServiceById.pending
+          // addService.pending,
+          getAllServices.pending
+          // updateServiceById.pending,
+          // deleteServiceById.pending
         ),
         state => {
           state.isLoading = true;

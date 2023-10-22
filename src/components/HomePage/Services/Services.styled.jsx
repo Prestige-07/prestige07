@@ -1,12 +1,12 @@
-.services {
+import styled from '@emotion/styled';
+
+export const ServicesWrapper = styled.div`
   padding: 20px;
-
   background-color: var(--secondary-bg-color);
-
   border-radius: 12px;
-}
+`;
 
-.services__thumb {
+export const ContentWrapper = styled.div`
   border-radius: 12px;
   padding: 30px 20px;
   background-image: var(--services-gradient-bgc);
@@ -18,9 +18,9 @@
     padding: 0;
     background-image: none;
   }
-}
+`;
 
-.services__list {
+export const ServicesList = styled.ul`
   border-radius: 12px;
   @media screen and (min-width: 1200px) {
     padding: 30px 20px;
@@ -32,9 +32,9 @@
       margin-bottom: 20px;
     }
   }
-}
+`;
 
-.services__item {
+export const ServicesItem = styled.li`
   display: flex;
 
   color: var(--primary-text-color);
@@ -51,15 +51,6 @@
     font-size: 18px;
     line-height: 1.67;
   }
-}
+`;
 
-.services__name {
-  margin-right: auto;
-}
-
-.services__btn {
-  display: block;
-  margin: 44px auto 0px;
-
-  color: var(--primary-text-color);
-}
+export const ServiceName = styled.p``;

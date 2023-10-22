@@ -12,6 +12,7 @@ const initialState = {
   isLoading: false,
   totalPages: '',
   error: '',
+  totalsOrders: {},
 };
 
 export const ordersSlice = createSlice({
@@ -24,7 +25,7 @@ export const ordersSlice = createSlice({
           ...state,
           items: [action.payload, ...state.items],
           error: null,
-          isLoading: false,
+          // isLoading: false,
         };
       })
       .addCase(getAllOrders.fulfilled, (state, action) => {
@@ -33,6 +34,7 @@ export const ordersSlice = createSlice({
           items: [...action.payload.orders],
           error: null,
           totalPages: action.payload.totalPages,
+          totalOrders: action.payload.totalOrders,
           isLoading: false,
         };
       })
@@ -49,15 +51,15 @@ export const ordersSlice = createSlice({
           ...state,
           orderByNumber: action.payload,
           error: null,
-          isLoading: false,
+          // isLoading: false,
         };
       })
       .addMatcher(
         isAnyOf(
           getAllOrders.pending,
-          getOrderByNumber.pending,
-          updateOrderByNumber.pending,
-          addNewOrder.pending
+          getOrderByNumber.pending
+          // updateOrderByNumber.pending,
+          // addNewOrder.pending
         ),
         state => {
           state.isLoading = true;

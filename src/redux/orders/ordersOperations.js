@@ -7,6 +7,7 @@ export const addNewOrder = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await instance.post('/api/orders', data);
+      toast.success('Замовлення створено успішно!');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -50,6 +51,7 @@ export const updateOrderByNumber = createAsyncThunk(
       const response = await instance.patch(`/api/orders/${number}/update`, {
         data,
       });
+      toast.success('Замовлення оновлено успішно!');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);

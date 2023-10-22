@@ -1,9 +1,12 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectTotalOrders } from 'redux/orders/ordersSelectors';
 
 import {
   FilterList,
   FilterItem,
   FilterButton,
+  AmountOrders,
 } from './OrdersFilterList.styled';
 
 export const OrdersFilterList = () => {
@@ -11,27 +14,13 @@ export const OrdersFilterList = () => {
   const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
 
-  const handleStatusFilter = e => {
-    let updatedStatus = '';
+  const totalOrders = useSelector(selectTotalOrders);
 
-    if (e.target.textContent === 'Всі') {
-      updatedStatus = '';
-    } else if (e.target.textContent === 'Нові') {
-      updatedStatus = 'Нове';
-    } else if (e.target.textContent === 'В роботі') {
-      updatedStatus = 'В роботі';
-    } else if (e.target.textContent === 'Виконані') {
-      updatedStatus = 'Виконане';
-    } else if (e.target.textContent === 'Скасовані') {
-      updatedStatus = 'Скасоване';
-    }
-
-    queryParams.set('status', updatedStatus);
+  const handleStatusFilter = query => {
+    queryParams.set('status', query);
 
     navigate(
-      `/admin/orders?${
-        updatedStatus.length > 0 ? `status=${updatedStatus}` : ''
-      }&page=1`
+      `/admin/orders?${query.length > 0 ? `status=${query}` : ''}&page=1`
     );
   };
 
@@ -42,10 +31,13 @@ export const OrdersFilterList = () => {
           type="button"
           color="var(--filter-all-color)"
           onClick={e => {
-            handleStatusFilter(e);
+            handleStatusFilter('');
           }}
         >
           Всі
+          <AmountOrders>
+            {totalOrders ? totalOrders.allOrders : '0'}
+          </AmountOrders>
         </FilterButton>
       </FilterItem>
       <FilterItem>
@@ -53,10 +45,13 @@ export const OrdersFilterList = () => {
           type="button"
           color="var(--filter-new-color)"
           onClick={e => {
-            handleStatusFilter(e);
+            handleStatusFilter('Нове');
           }}
         >
           Нові
+          <AmountOrders>
+            {totalOrders ? totalOrders.newOrders : '0'}
+          </AmountOrders>
         </FilterButton>
       </FilterItem>
       <FilterItem>
@@ -64,10 +59,13 @@ export const OrdersFilterList = () => {
           type="button"
           color="var(--filter-inProcess-color)"
           onClick={e => {
-            handleStatusFilter(e);
+            handleStatusFilter('В роботі');
           }}
         >
           В роботі
+          <AmountOrders>
+            {totalOrders ? totalOrders.inProcessOrders : '0'}
+          </AmountOrders>
         </FilterButton>
       </FilterItem>
       <FilterItem>
@@ -75,10 +73,13 @@ export const OrdersFilterList = () => {
           type="button"
           color="var(--filter-completed-color)"
           onClick={e => {
-            handleStatusFilter(e);
+            handleStatusFilter('Виконане');
           }}
         >
           Виконані
+          <AmountOrders>
+            {totalOrders ? totalOrders.completedOrders : '0'}
+          </AmountOrders>
         </FilterButton>
       </FilterItem>
       <FilterItem>
@@ -86,10 +87,13 @@ export const OrdersFilterList = () => {
           type="button"
           color="var(--filter-cancelled-color)"
           onClick={e => {
-            handleStatusFilter(e);
+            handleStatusFilter('Скасоване');
           }}
         >
           Скасовані
+          <AmountOrders>
+            {totalOrders ? totalOrders.cancelledOrders : '0'}
+          </AmountOrders>
         </FilterButton>
       </FilterItem>
     </FilterList>

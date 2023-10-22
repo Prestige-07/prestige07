@@ -7,13 +7,24 @@ import { selectEmployees } from 'redux/employees/employeesSelectors';
 import { addNewOrder } from 'redux/orders/ordersOperations';
 
 import {
+  MainContainer,
+  Section,
+  MainButton,
+} from 'components/Global/Global.styled';
+import {
+  ReserveWrapper,
+  LeftSide,
+  Logo,
+  RightSide,
+  Title,
+} from './Reserve.styled';
+import {
   Input,
   Label,
   FormSelect,
   FormCheckbox,
   SelectOption,
 } from 'components/Forms/Forms.styled';
-import { ReactComponent as MyLogo } from '../../../images/icons/logo-without-star.svg';
 import { ModalCreatedOrder } from 'components/AdminPage/Modals/ModalCreatedOrder/ModalCreatedOrder';
 
 export const Reserve = () => {
@@ -53,18 +64,15 @@ export const Reserve = () => {
   });
 
   return (
-    <section className="section" id="reserve">
-      <div className="container">
-        <div className="reserve">
-          <div className="reserve__left-side">
-            <MyLogo width="200px" height="200px" className="logo" />
-          </div>
+    <Section id="reserve">
+      <MainContainer>
+        <ReserveWrapper>
+          <LeftSide>
+            <Logo />
+          </LeftSide>
 
-          <form
-            onSubmit={formik.handleSubmit}
-            className="reserve__right-side form"
-          >
-            <h2 className="section__title reserve__title">Замовити послугу</h2>
+          <RightSide onSubmit={formik.handleSubmit}>
+            <Title>Замовити послугу</Title>
             <Input
               required
               type="text"
@@ -136,13 +144,13 @@ export const Reserve = () => {
               />
               Терміново
             </Label>
-            <button type="submit" className="btn">
+            <MainButton type="submit" color="var(--black-color)">
               Відправити
-            </button>
-          </form>
-        </div>
-      </div>
+            </MainButton>
+          </RightSide>
+        </ReserveWrapper>
+      </MainContainer>
       {isOpenModal && <ModalCreatedOrder handleExitModal={handleExitModal} />}
-    </section>
+    </Section>
   );
 };

@@ -26,10 +26,10 @@
   --transition: 300ms linear;
 
   /* gradient colors */
-  --hero-gradient-bgc: linear-gradient(
-    to right,
-    rgba(47, 48, 58, 0.4),
-    rgba(47, 48, 58, 0.4)
+  --hero-gradient-bgc: radial-gradient(
+    circle,
+    rgba(30, 33, 36, 0.1966036414565826) 0%,
+    rgba(30, 33, 36, 1) 85%
   );
   --services-gradient-bgc: linear-gradient(
     180deg,

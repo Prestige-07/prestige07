@@ -22,7 +22,7 @@ export const gallerySlice = createSlice({
           ...state,
           items: [action.payload, ...state.items],
           error: null,
-          isLoading: false,
+          // isLoading: false,
         };
       })
       .addCase(getGallery.fulfilled, (state, action) => {
@@ -39,13 +39,13 @@ export const gallerySlice = createSlice({
           photo => photo._id !== deletedPhotosId
         );
         state.error = null;
-        state.isLoading = false;
+        // state.isLoading = false;
       })
       .addMatcher(
         isAnyOf(
-          addPhotosGroup.pending,
-          getGallery.pending,
-          deletePhotosGroup.pending
+          // addPhotosGroup.pending,
+          getGallery.pending
+          // deletePhotosGroup.pending
         ),
         state => {
           state.error = null;

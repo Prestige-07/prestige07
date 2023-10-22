@@ -7,6 +7,7 @@ export const addService = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await instance.post('/api/services', data);
+      toast.success('Послугу додано успішно!');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -35,6 +36,7 @@ export const updateServiceById = createAsyncThunk(
       const response = await instance.post(`/api/services/${_id}/update`, {
         ...data,
       });
+      toast.success('Послугу оновлено успішно!');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);
@@ -48,6 +50,7 @@ export const deleteServiceById = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const response = await instance.delete(`/api/services/${id}/delete`);
+      toast.success('Послугу видалено успішно!');
       return response.data;
     } catch (error) {
       toast.error(error.response.data.message);

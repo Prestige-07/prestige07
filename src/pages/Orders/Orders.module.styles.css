@@ -1,0 +1,43 @@
+.react-paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  list-style: none;
+}
+
+.react-paginate li {
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Стилі для активної сторінки */
+.react-paginate li.selected {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.react-paginate li.selected a {
+  color: var(--black-color);
+}
+
+/* Стилі для кнопок "Попередня" і "Наступна" */
+.react-paginate a {
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+/* Стилі для "Зроблено" та "Далі" */
+.react-paginate a.next,
+.react-paginate a.previous {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+  padding: 5px 10px;
+}

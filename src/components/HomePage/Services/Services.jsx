@@ -1,49 +1,134 @@
+import {
+  Section,
+  SectionTitle,
+  MainContainer,
+} from 'components/Global/Global.styled';
+import {
+  ServicesWrapper,
+  ContentWrapper,
+  ServicesList,
+  ServicesItem,
+  ServiceName,
+} from './Services.styled';
+
 export const Services = () => {
   return (
-    <section className="section" id="services">
-      <div className="container">
-        <div className="services">
-          <h2 className="section__title">Послуги</h2>
-          <div className="services__thumb">
-            <ul className="services__list">
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 300 грн</span>
-              </li>
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 200 грн</span>
-              </li>
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 200 грн</span>
-              </li>
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 200 грн</span>
-              </li>
-            </ul>
-            <ul className="services__list">
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 50 грн</span>
-              </li>
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 200 грн</span>
-              </li>
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 300 грн</span>
-              </li>
-              <li className="services__item">
-                <p className="services__name">Lorem ipsum dolor sit amet.</p>
-                <span className="services__price">від 200 грн</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Section id="services">
+      <MainContainer>
+        <ServicesWrapper>
+          <SectionTitle>Послуги</SectionTitle>
+          <ContentWrapper>
+            <ServicesList>
+              <ServicesItem>
+                <ServiceName>
+                  Мийка "Комплекс" (мийка, продування з витиранням, рідкий віск,
+                  пилосос й вологе прибирання багажнику, протирання скла,
+                  чорніння)
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Мийка безконтактна + килимки</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  Мийка "Експрес" з піною (без витирання) + килимки
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  Збивання бруду, снігу, льоду без мийки
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Рідкий віск</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  Пилосос салону і багажнику / вологе прибиранну салону
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  Вологе антибактеріальне прибирання салону (торнадор)
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Натирання плстику полімером</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Протирання всього скла</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Натирання гуми (чорніння коліс)</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімічна чистка дисків</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Твердий віск</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Полімерний віск</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Мийка двигуна</ServiceName>
+              </ServicesItem>
+            </ServicesList>
+            <ServicesList>
+              <ServicesItem>
+                <ServiceName>Зняття комах</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Мийка гумових килимків</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка тканинних килимків</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Обробка шкіри (кондиціонер шкіри)</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Антидощ</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Зняття бітуму, смоли</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка салону</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка підлоги</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка карт дверей</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка сидінь</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка стелі</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Хімчистка багажнику</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  3-х фазна мийка кузова: попереднє миття шампунем без фосфатів,
+                  ручна мийка шампунем, консервація кузова ідеальний блиск і
+                  гідрофобність, турбо сушка + мікрофібра (в подарунок
+                  консерваця шин)
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  3-х фазник комплекс доповнює мийку послугами: вологе
+                  прибирання салону, пилосос, килимки, пластик, скло,багажник
+                </ServiceName>
+              </ServicesItem>
+            </ServicesList>
+          </ContentWrapper>
+        </ServicesWrapper>
+      </MainContainer>
+    </Section>
   );
 };

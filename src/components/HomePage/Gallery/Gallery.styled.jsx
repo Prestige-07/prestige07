@@ -2,16 +2,12 @@ import styled from '@emotion/styled';
 
 export const GalleryWrapper = styled.div`
   display: flex;
-
+  // padding-bottom: 50px;
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }
-`;
 
-export const GalleryItem = styled.div`
-  position: relative;
-  margin: 0 2px;
-  max-height: 330px;
+  height: 500px;
 
   @media screen and (min-width: 768px) {
     max-height: 270px;
@@ -19,7 +15,16 @@ export const GalleryItem = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    max-height: 430px;
+    max-height: 400px;
+  }
+`;
+
+export const GalleryItem = styled.div`
+  position: relative;
+  margin: 0 2px;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: 50%;
   }
 `;
 

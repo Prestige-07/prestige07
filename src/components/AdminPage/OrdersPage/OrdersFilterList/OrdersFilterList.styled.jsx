@@ -23,3 +23,9 @@ export const FilterButton = styled.button`
     opacity: 1;
   }
 `;
+
+export const AmountOrders = styled.span`
+  margin-left: 5px;
+  // border-radius: 50%;
+  // background-color: white;
+`;
