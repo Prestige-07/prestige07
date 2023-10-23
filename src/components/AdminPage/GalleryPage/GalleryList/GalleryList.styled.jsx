@@ -38,7 +38,7 @@ export const UnderTitle = styled.p`
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 6px 0;
+  padding: 15px 0;
   text-align: center;
   width: 100%;
   background-color: var(--shadow-bg-color);

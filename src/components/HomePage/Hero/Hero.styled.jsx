@@ -8,7 +8,7 @@ export const HeroSection = styled.section`
   margin-right: auto;
   margin-left: auto;
 
-  height: 750px;
+  height: 480px;
 
   background-repeat: no-repeat;
   background-position: center;
@@ -17,6 +17,7 @@ export const HeroSection = styled.section`
   @media screen and (min-width: 1200px) {
     padding-bottom: 100px;
     max-width: 1600px;
+    height: 750px;
   }
 `;
 
@@ -25,15 +26,16 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  padding: 50px;
+  padding: 20px;
 
-  max-width: 370px;
+  max-width: 310px;
   height: max-content;
 
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
 
   @media screen and (min-width: 1200px) {
+    padding: 50px;
     max-width: 470px;
   }
 `;

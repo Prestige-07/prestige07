@@ -1,41 +1,41 @@
 .hero__bg-image {
   /* mobile screen */
 
-  background-image: var(--hero-gradient-bgc),
-    url(../../../images/hero/hero-img.jpg);
+  background-image: var(--hero-gradient),
+    url(../../../images/hero/hero_mobile.jpg);
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: var(--hero-gradient-bgc),
-      url(../../../images/hero/hero-img.jpg);
+    background-image: var(--hero-gradient),
+      url(../../../images/hero/hero_mobile_2x.jpg);
   }
 
   /* tablet screen */
 
-  @media screen and (min-width: 481px) {
-    background-image: var(--hero-gradient-bgc),
-      url(../../../images/hero/hero-img.jpg);
+  @media screen and (min-width: 768px) {
+    background-image: var(--hero-gradient),
+      url(../../../images/hero/hero_tablet.jpg);
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: var(--hero-gradient-bgc),
-        url(../../../images/hero/hero-img.jpg);
+      background-image: var(--hero-gradient),
+        url(../../../images/hero/hero_tablet_2x.jpg);
     }
   }
 
   /* deckstop screen */
 
-  @media screen and (min-width: 769px) {
-    background-image: var(--hero-gradient-bgc),
-      url(../../../images/hero/hero-img.jpg);
+  @media screen and (min-width: 1200px) {
+    background-image: var(--hero-gradient),
+      url(../../../images/hero/hero_desc.jpg);
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: var(--hero-gradient-bgc),
-        url(../../../images/hero/hero-img.jpg);
+      background-image: var(--hero-gradient),
+        url(../../../images/hero/hero_desc_2x.jpg);
     }
   }
 }

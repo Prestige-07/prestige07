@@ -30,7 +30,7 @@ export const Gallery = () => {
     autoPlay: true,
     interval: 3000,
     infiniteLoop: true,
-    showArrows: true,
+    showArrows: false,
     showThumbs: false,
     emulateTouch: true,
     showStatus: false,

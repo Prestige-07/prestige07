@@ -2,29 +2,22 @@ import styled from '@emotion/styled';
 
 export const GalleryWrapper = styled.div`
   display: flex;
-  // padding-bottom: 50px;
+  padding-bottom: 40px;
   @media screen and (max-width: 767px) {
     flex-direction: column;
-  }
-
-  height: 500px;
-
-  @media screen and (min-width: 768px) {
-    max-height: 270px;
-    flex-basis: 50%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    max-height: 400px;
   }
 `;
 
 export const GalleryItem = styled.div`
   position: relative;
   margin: 0 2px;
-
+  height: 300px;
   @media screen and (min-width: 768px) {
     flex-basis: 50%;
+    height: 250px;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 400px;
   }
 `;
 

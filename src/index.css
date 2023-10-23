@@ -4,12 +4,7 @@
 @import './styles-components/base.module.css';
 @import './styles-components/utils.module.css';
 @import './styles-components/animations.css';
-/* Clients page */
-@import './styles-components/section.module.css';
-@import './styles-components/container.module.css';
-@import './styles-components/buttons.module.css';
+/* Client page */
 @import './components/HomePage/Hero/Hero.module.css';
-@import './components/HomePage/Contacts/Contacts.module.css';
-@import './components/HomePage/Footer/Footer.module.css';
-
+/* Admin page */
 @import './pages/Orders/Orders.module.styles.css';
