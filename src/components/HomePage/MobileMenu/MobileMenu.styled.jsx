@@ -14,6 +14,13 @@ export const MenuWrapper = styled.div`
   @media screen and (min-width: 768px) {
     display: none;
   }
+  transition: transform var(--transition), opacity var(--transition),
+    visibility var(--transition);
+
+  visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
+  opacity: ${props => (props.isOpen ? '1' : '0')};
+  pointer-events: ${props => (props.isOpen ? 'auto' : 'none')};
+  transform: ${props => (props.isOpen ? 'translateX(0)' : 'translateX(100%)')};
 `;
 
 export const Navigation = styled.nav``;

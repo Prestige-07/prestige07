@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { handleSmoothScroll } from 'utils/handleSmoothScroll';
 
 import { MainContainer, MainLinkButton } from 'components/Global/Global.styled';
 import {
@@ -27,34 +28,86 @@ export const Header = () => {
     <HeaderWrapper>
       <MainContainer>
         <HeaderContainer>
-          <a href="#home" onClick={() => handleExitMenu()}>
+          <a
+            href="#home"
+            onClick={e => {
+              e.preventDefault();
+              handleSmoothScroll('home');
+              handleExitMenu();
+            }}
+          >
             <Logo />
           </a>
 
           <Navigation>
             <NavList>
               <NavItem>
-                <Link href="#home" paddingTop="32px" paddingBottom="32px">
+                <Link
+                  href="#home"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSmoothScroll('home');
+                    handleExitMenu();
+                  }}
+                  paddingTop="32px"
+                  paddingBottom="32px"
+                >
                   Головна
                 </Link>
               </NavItem>
               <NavItem>
-                <Link href="#about" paddingTop="32px" paddingBottom="32px">
+                <Link
+                  href="#about"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSmoothScroll('about');
+                    handleExitMenu();
+                  }}
+                  paddingTop="32px"
+                  paddingBottom="32px"
+                >
                   Про нас
                 </Link>
               </NavItem>
               <NavItem>
-                <Link href="#services" paddingTop="32px" paddingBottom="32px">
+                <Link
+                  href="#services"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSmoothScroll('services');
+                    handleExitMenu();
+                  }}
+                  paddingTop="32px"
+                  paddingBottom="32px"
+                >
                   Послуги
                 </Link>
               </NavItem>
               <NavItem>
-                <Link href="#gallery" paddingTop="32px" paddingBottom="32px">
+                <Link
+                  href="#gallery"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSmoothScroll('gallery');
+                    handleExitMenu();
+                  }}
+                  paddingTop="32px"
+                  paddingBottom="32px"
+                >
                   Наші роботи
                 </Link>
               </NavItem>
               <NavItem>
-                <Link href="#contacts" paddingTop="32px" paddingBottom="32px">
+                <Link
+                  href="#contacts"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSmoothScroll('contacts');
+                    handleExitMenu();
+                  }}
+                  paddingTop="32px"
+                  paddingBottom="32px"
+                >
                   Контакти
                 </Link>
               </NavItem>
@@ -66,7 +119,16 @@ export const Header = () => {
               <TelIcon />
               +38 096 111 11 11
             </Link>
-            <MainLinkButton href="#reserve">Замовити послугу</MainLinkButton>
+            <MainLinkButton
+              href="#reserve"
+              onClick={e => {
+                e.preventDefault();
+                handleSmoothScroll('reserve');
+                handleExitMenu();
+              }}
+            >
+              Замовити послугу
+            </MainLinkButton>
           </Contacts>
 
           <MenuButton type="button">
@@ -82,7 +144,7 @@ export const Header = () => {
             />
           </MenuButton>
         </HeaderContainer>
-        {isOpen && <MobileMenu handleExitMenu={handleExitMenu} />}
+        <MobileMenu handleExitMenu={handleExitMenu} isOpen={isOpen} />
       </MainContainer>
     </HeaderWrapper>
   );

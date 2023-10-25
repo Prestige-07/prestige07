@@ -38,6 +38,7 @@ export const ModalAddService = props => {
     <ModalLayout
       handleExitModal={handleExitModal}
       handleBackdropClick={handleBackdropClick}
+      isOpen={props.isOpen}
     >
       <Title>Додати послугу</Title>
       <Form onSubmit={formik.handleSubmit}>

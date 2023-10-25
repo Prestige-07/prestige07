@@ -71,6 +71,7 @@ export const ModaAddOrder = props => {
     <ModalLayout
       handleExitModal={handleExitModal}
       handleBackdropClick={handleBackdropClick}
+      isOpen={props.isOpen}
     >
       <Title>Створити замовлення</Title>
       <Form onSubmit={formik.handleSubmit}>

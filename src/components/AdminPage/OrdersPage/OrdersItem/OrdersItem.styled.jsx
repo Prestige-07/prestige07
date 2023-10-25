@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Item = styled.li`
   padding: 20px;
+  min-width: 400px;
   background-color: var(--admin-items-bg-color);
   border-radius: 12px;
 `;
@@ -31,13 +32,15 @@ export const OrderLink = styled(Link)`
   }
 `;
 
-export const StatusButton = styled.button`
-  background-color: ${props => props.color};
+export const Status = styled.p`
   padding: 5px;
   margin-left: auto;
-  width: 80px;
+  text-align: center;
+  min-width: 80px;
   border: none;
   border-radius: 8px;
+  color: var(--black-color);
+  background-color: ${props => props.color};
 `;
 
 export const PartContainer = styled.div`

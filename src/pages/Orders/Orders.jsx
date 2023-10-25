@@ -55,7 +55,6 @@ const OrdersPage = () => {
       </HeaderContainer>
 
       <OrdersList />
-      {isOpenModal && <ModaAddOrder handleExitModal={handleExitModal} />}
       {Number(totalPages) > 1 && (
         <ReactPaginate
           breakLabel="..."
@@ -69,6 +68,8 @@ const OrdersPage = () => {
           initialPage={Number(page) - 1}
         />
       )}
+
+      <ModaAddOrder handleExitModal={handleExitModal} isOpen={isOpenModal} />
     </Section>
   );
 };

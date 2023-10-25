@@ -41,7 +41,7 @@ const Gallery = () => {
         </MainButton>
       </HeaderContainer>
       <GalleryList />
-      {isOpenModal && <ModalAddPhotos handleExitModal={handleExitModal} />}
+      <ModalAddPhotos handleExitModal={handleExitModal} isOpen={isOpenModal} />
     </Section>
   );
 };

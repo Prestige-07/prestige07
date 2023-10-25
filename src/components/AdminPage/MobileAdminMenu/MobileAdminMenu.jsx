@@ -39,47 +39,45 @@ export const MobileAdminMenu = () => {
         />
       </MenuButton>
 
-      {isOpenMenu && (
-        <MenuWrapper>
-          <UserWrapper>
-            <UserIcon />
-            <UserName>{user.name}</UserName>
-            <Logout type="button" onClick={() => dispatch(logout())}>
-              <LogoutIcon />
-            </Logout>
-          </UserWrapper>
+      <MenuWrapper isOpen={isOpenMenu}>
+        <UserWrapper>
+          <UserIcon />
+          <UserName>{user.name}</UserName>
+          <Logout type="button" onClick={() => dispatch(logout())}>
+            <LogoutIcon />
+          </Logout>
+        </UserWrapper>
 
-          <NavigationWrapper>
-            <NavigationList>
-              <NavigationItem>
-                <PageLink to="orders" onClick={() => setOpenMenu(false)}>
-                  Замовлення
-                </PageLink>
-              </NavigationItem>
-              <NavigationItem>
-                <PageLink to="gallery" onClick={() => setOpenMenu(false)}>
-                  Галерея зображень
-                </PageLink>
-              </NavigationItem>
-              <NavigationItem>
-                <PageLink to="employees" onClick={() => setOpenMenu(false)}>
-                  Працівники
-                </PageLink>
-              </NavigationItem>
-              <NavigationItem>
-                <PageLink to="services" onClick={() => setOpenMenu(false)}>
-                  Послуги
-                </PageLink>
-              </NavigationItem>
-              <NavigationItem>
-                <PageLink to="reports" onClick={() => setOpenMenu(false)}>
-                  Звітність
-                </PageLink>
-              </NavigationItem>
-            </NavigationList>
-          </NavigationWrapper>
-        </MenuWrapper>
-      )}
+        <NavigationWrapper>
+          <NavigationList>
+            <NavigationItem>
+              <PageLink to="orders" onClick={() => setOpenMenu(false)}>
+                Замовлення
+              </PageLink>
+            </NavigationItem>
+            <NavigationItem>
+              <PageLink to="gallery" onClick={() => setOpenMenu(false)}>
+                Галерея зображень
+              </PageLink>
+            </NavigationItem>
+            <NavigationItem>
+              <PageLink to="employees" onClick={() => setOpenMenu(false)}>
+                Працівники
+              </PageLink>
+            </NavigationItem>
+            <NavigationItem>
+              <PageLink to="services" onClick={() => setOpenMenu(false)}>
+                Послуги
+              </PageLink>
+            </NavigationItem>
+            <NavigationItem>
+              <PageLink to="reports" onClick={() => setOpenMenu(false)}>
+                Звітність
+              </PageLink>
+            </NavigationItem>
+          </NavigationList>
+        </NavigationWrapper>
+      </MenuWrapper>
     </>
   );
 };

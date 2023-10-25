@@ -15,15 +15,17 @@ export const Backdrop = styled.div`
   height: 100%;
   background-color: rgba(25, 28, 38, 0.8);
 
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
+  transition: transform var(--transition), opacity var(--transition),
+    visibility var(--transition);
+
+  visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
+  opacity: ${props => (props.isOpen ? '1' : '0')};
+  pointer-events: ${props => (props.isOpen ? 'auto' : 'none')};
+  transform: ${props => (props.isOpen ? 'scale(1)' : 'scale(0)')};
 `;
 
 export const Modal = styled.div`
   position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   padding: 50px;
   width: 800px;
   background-color: var(--white-color);

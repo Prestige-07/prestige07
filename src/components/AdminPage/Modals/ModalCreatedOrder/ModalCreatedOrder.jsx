@@ -16,9 +16,10 @@ export const ModalCreatedOrder = props => {
     <ModalLayout
       handleExitModal={handleExitModal}
       handleBackdropClick={handleBackdropClick}
+      isOpen={props.isOpen}
     >
       <Title>Замовлення створено!</Title>
-      <Text>Будь ласка, очікуйте на дзвінок адміністратора.</Text>
+      <Text>Будь ласка, очікуйте на дзвінок оператора.</Text>
     </ModalLayout>
   );
 };

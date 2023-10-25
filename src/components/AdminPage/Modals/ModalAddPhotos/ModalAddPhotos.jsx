@@ -45,6 +45,7 @@ export const ModalAddPhotos = props => {
     <ModalLayout
       handleExitModal={handleExitModal}
       handleBackdropClick={handleBackdropClick}
+      isOpen={props.isOpen}
     >
       <Title>Додати фото</Title>
       <Form onSubmit={formik.handleSubmit}>

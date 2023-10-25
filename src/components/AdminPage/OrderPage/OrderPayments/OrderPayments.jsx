@@ -52,7 +52,10 @@ export const OrderPayments = ({ order }) => {
         </Payment>
       </PaymentsList>
 
-      {isOpenModal && <ModalAddDiscount handleExitModal={handleExitModal} />}
+      <ModalAddDiscount
+        handleExitModal={handleExitModal}
+        isOpen={isOpenModal}
+      />
     </PaymentsContainer>
   );
 };

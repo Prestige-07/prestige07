@@ -3,7 +3,7 @@ import {
   OrderHeader,
   MarkUrgency,
   OrderLink,
-  StatusButton,
+  Status,
   PartContainer,
   Text,
   LeftSide,
@@ -31,9 +31,9 @@ export const OrdersItem = ({ order }) => {
           {`Замовлення ${order.orderNumber}`}
         </OrderLink>
         {order.urgently && <MarkUrgency>Терміново!</MarkUrgency>}
-        <StatusButton type="button" color={statusColor({ order })}>
+        <Status type="button" color={statusColor({ order })}>
           {`${order.status}`}
-        </StatusButton>
+        </Status>
       </OrderHeader>
 
       <hr />

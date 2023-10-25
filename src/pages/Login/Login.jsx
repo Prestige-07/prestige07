@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { TextField } from '@mui/material';
+import { MainButton } from 'components/Global/Global.styled';
 
 import { login } from 'redux/auth/authOperations';
 import { selectIsLoggedIn } from 'redux/auth/authSelectors';
@@ -75,9 +76,9 @@ const LoginPage = () => {
           className="field"
         />
 
-        <button type="submit" className="btn">
+        <MainButton type="submit" color="var(--black-color)">
           Увійти
-        </button>
+        </MainButton>
       </form>
     </div>
   );

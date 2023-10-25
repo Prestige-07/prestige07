@@ -38,6 +38,7 @@ export const ModalAddEmployee = props => {
     <ModalLayout
       handleExitModal={handleExitModal}
       handleBackdropClick={handleBackdropClick}
+      isOpen={props.isOpen}
     >
       <Title>Додати працівника</Title>
       <Form onSubmit={formik.handleSubmit}>

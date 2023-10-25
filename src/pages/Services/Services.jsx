@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  useDispatch,
-  // useSelector
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { getAllServices } from 'redux/services/servicesOperations';
 
@@ -38,7 +35,7 @@ const ServicesPage = () => {
 
       <ServicesList />
 
-      {isOpenModal && <ModalAddService handleExitModal={handleExitModal} />}
+      <ModalAddService handleExitModal={handleExitModal} isOpen={isOpenModal} />
     </Section>
   );
 };

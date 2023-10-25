@@ -1,10 +1,11 @@
+import axios from 'axios';
+import toast from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 
 import { getAllEmployeesForUser } from 'redux/employees/employeesOperations';
 import { selectEmployees } from 'redux/employees/employeesSelectors';
-import { addNewOrder } from 'redux/orders/ordersOperations';
 
 import {
   MainContainer,
@@ -50,16 +51,20 @@ export const Reserve = () => {
       washer: '',
       urgently: false,
     },
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: async (values, { resetForm }) => {
       const filteredValues = {};
       for (const key in values) {
         if (values[key] !== '') {
           filteredValues[key] = values[key];
         }
       }
-      dispatch(addNewOrder(filteredValues));
-      setOpenModal(true);
-      resetForm();
+      try {
+        await axios.post('http://localhost:3001/api/orders', filteredValues);
+        setOpenModal(true);
+        resetForm();
+      } catch (error) {
+        toast.error('Помилка! Будь ласка, спробуйте знову');
+      }
     },
   });
 
@@ -150,7 +155,10 @@ export const Reserve = () => {
           </RightSide>
         </ReserveWrapper>
       </MainContainer>
-      {isOpenModal && <ModalCreatedOrder handleExitModal={handleExitModal} />}
+      <ModalCreatedOrder
+        handleExitModal={handleExitModal}
+        isOpen={isOpenModal}
+      />
     </Section>
   );
 };

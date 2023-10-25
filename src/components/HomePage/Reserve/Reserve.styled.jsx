@@ -31,7 +31,7 @@ export const Logo = styled(ReactComponent)`
   fill: var(--accent-color);
 `;
 
-export const RightSide = styled.div`
+export const RightSide = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -46,7 +46,10 @@ const EmployeesPage = () => {
 
       <EmployeesList />
 
-      {isOpenModal && <ModalAddEmployee handleExitModal={handleExitModal} />}
+      <ModalAddEmployee
+        handleExitModal={handleExitModal}
+        isOpen={isOpenModal}
+      />
     </Section>
   );
 };

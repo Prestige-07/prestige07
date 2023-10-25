@@ -40,6 +40,7 @@ export const ModalAddDiscount = props => {
     <ModalLayout
       handleExitModal={handleExitModal}
       handleBackdropClick={handleBackdropClick}
+      isOpen={props.isOpen}
     >
       <Title>Додати знижку</Title>
       <Form onSubmit={formik.handleSubmit}>
