@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   background-color: var(--secondary-bg-color);
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     display: none;
   }
 `;

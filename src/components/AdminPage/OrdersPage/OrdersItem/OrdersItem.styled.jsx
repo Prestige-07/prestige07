@@ -19,7 +19,7 @@ export const MarkUrgency = styled.b`
   display: inline-block;
   padding: 5px;
   background-color: red;
-  font-size: 16px;
+  font-size: 10px;
   border-radius: 12px;
 `;
 
@@ -36,7 +36,7 @@ export const Status = styled.p`
   padding: 5px;
   margin-left: auto;
   text-align: center;
-  min-width: 80px;
+  min-width: max-content;
   border: none;
   border-radius: 8px;
   color: var(--black-color);

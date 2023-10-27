@@ -14,9 +14,9 @@ export const MenuWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: var(--primary-bg-color);
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     display: none;
   }
   transition: transform var(--transition), opacity var(--transition),
@@ -103,7 +103,7 @@ export const MenuButton = styled.button`
   border: none;
   cursor: pointer;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     display: none;
   }
 `;
