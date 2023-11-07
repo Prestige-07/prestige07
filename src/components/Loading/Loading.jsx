@@ -1,4 +1,4 @@
-import { Backdrop } from 'components/AdminPage/Modals/Modal.styles';
+import { Backdrop } from './Loading.styled';
 import { Hourglass } from 'react-loader-spinner';
 
 export const Loading = () => (
@@ -10,7 +10,7 @@ export const Loading = () => (
       ariaLabel="hourglass-loading"
       wrapperStyle={{}}
       wrapperClass=""
-      colors={['#306cce', '#72a1ed']}
+      colors={['var(--accent-color)', '#72a1ed']}
     />
   </Backdrop>
 );

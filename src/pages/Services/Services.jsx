@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getAllServices } from 'redux/services/servicesOperations';
 
@@ -10,10 +10,14 @@ import {
   SectionTitle,
   MainButton,
 } from 'components/Global/Global.styled';
-import { ModalAddService } from 'components/AdminPage/Modals/ModalAddService/ModalAddService';
+import { ModalAddService } from 'components/Modals/ModalAddService/ModalAddService';
+import { selectIsLoadingServices } from 'redux/services/servicesSelectors';
+import { Loading } from 'components/Loading/Loading';
 
 const ServicesPage = () => {
   const [isOpenModal, setOpenModal] = useState(false);
+  const isLoading = useSelector(selectIsLoadingServices);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +29,7 @@ const ServicesPage = () => {
   };
 
   return (
-    <Section>
+    <Section paddingBottom={true}>
       <HeaderContainer>
         <SectionTitle>Послуги</SectionTitle>
         <MainButton type="button" onClick={() => setOpenModal(true)}>
@@ -36,6 +40,7 @@ const ServicesPage = () => {
       <ServicesList />
 
       <ModalAddService handleExitModal={handleExitModal} isOpen={isOpenModal} />
+      {isLoading && <Loading />}
     </Section>
   );
 };

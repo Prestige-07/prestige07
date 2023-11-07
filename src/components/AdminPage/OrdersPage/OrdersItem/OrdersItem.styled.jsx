@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const Item = styled.li`
-  padding: 20px;
-  min-width: 400px;
+  padding: 15px;
+  min-width: content;
   background-color: var(--admin-items-bg-color);
   border-radius: 12px;
 `;
@@ -40,7 +40,18 @@ export const Status = styled.p`
   border: none;
   border-radius: 8px;
   color: var(--black-color);
-  background-color: ${props => props.color};
+  background-color: ${props => {
+    switch (props.color) {
+      case 'Виконане':
+        return 'var(--filter-completed-color)';
+      case 'В роботі':
+        return 'var(--filter-inProcess-color)';
+      case 'Скасоване':
+        return 'var(--filter-cancelled-color)';
+      default:
+        return 'var(--filter-new-color)';
+    }
+  }};
 `;
 
 export const PartContainer = styled.div`
@@ -56,7 +67,6 @@ export const LeftSide = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  // width: 470px;
 `;
 
 export const Text = styled.p``;

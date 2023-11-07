@@ -8,14 +8,18 @@ import {
   MainButton,
 } from 'components/Global/Global.styled';
 import { EmployeesList } from 'components/AdminPage/EmployeesPage/EmployeesList/EmployeesList';
-import { ModalAddEmployee } from 'components/AdminPage/Modals/ModalAddEmployee/ModalAddEmployee';
+import { ModalAddEmployee } from 'components/Modals/ModalAddEmployee/ModalAddEmployee';
 import { Loading } from 'components/Loading/Loading';
 
 import { getAllEmployees } from 'redux/employees/employeesOperations';
-import { selectIsLoadingEmployees } from 'redux/employees/employeesSelectors';
+import {
+  selectIsLoadingEmployees,
+  selectIsUpdating,
+} from 'redux/employees/employeesSelectors';
 
 const EmployeesPage = () => {
   const isLoading = useSelector(selectIsLoadingEmployees);
+  const isUpdating = useSelector(selectIsUpdating);
 
   const [isOpenModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
@@ -32,7 +36,7 @@ const EmployeesPage = () => {
     return <Loading />;
   }
   return (
-    <Section>
+    <Section paddingBottom={true}>
       <HeaderContainer>
         <SectionTitle>Працівники</SectionTitle>
         <MainButton
@@ -50,6 +54,7 @@ const EmployeesPage = () => {
         handleExitModal={handleExitModal}
         isOpen={isOpenModal}
       />
+      {isUpdating && <Loading />}
     </Section>
   );
 };

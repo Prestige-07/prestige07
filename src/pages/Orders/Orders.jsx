@@ -11,7 +11,7 @@ import {
   HeaderContainer,
   MainButton,
 } from 'components/Global/Global.styled';
-import { ModaAddOrder } from 'components/AdminPage/Modals/ModaAddOrder/ModaAddOrder';
+import { ModaAddOrder } from 'components/Modals/ModaAddOrder/ModaAddOrder';
 import { OrdersList } from '../../components/AdminPage/OrdersPage/OrdersList/OrdersList';
 import { OrdersFilterList } from 'components/AdminPage/OrdersPage/OrdersFilterList/OrdersFilterList';
 
@@ -46,7 +46,7 @@ const OrdersPage = () => {
   };
 
   return (
-    <Section>
+    <Section paddingBottom={true}>
       <HeaderContainer>
         <OrdersFilterList />
         <MainButton type="button" onClick={() => setOpenModal(true)}>

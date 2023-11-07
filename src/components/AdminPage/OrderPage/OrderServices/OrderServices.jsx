@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllServices } from 'redux/services/servicesOperations';
 import { selectGetAllServices } from 'redux/services/servicesSelectors';
 import { updateOrderByNumber } from 'redux/orders/ordersOperations';
-// import throttle from 'lodash.throttle';
 
 import {
   ServicesContainer,

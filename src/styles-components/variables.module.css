@@ -38,9 +38,19 @@
   );
 
   /* buttons colors */
-  --filter-all-color: white;
-  --filter-new-color: silver;
-  --filter-inProcess-color: yellow;
-  --filter-completed-color: green;
-  --filter-cancelled-color: red;
+  --filter-all-color: #ffffff;
+  --filter-new-color: #999999;
+  --filter-inProcess-color: #f9d62e;
+  --filter-completed-color: #74d600;
+  --filter-cancelled-color: #ff084a;
+
+  --download-color: #0073e6;
+
+  /* Modal colors */
+  --backdrop-color: rgba(25, 28, 38, 0.8);
+
+  /* Table colors */
+  --table-head: #0073e6;
+  --table-background: #f4f4f4;
+  --table-row: #e6e6e6;
 }

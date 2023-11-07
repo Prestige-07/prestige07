@@ -9,7 +9,7 @@ import {
   Payment,
   Text,
 } from './OrderPayments.styled';
-import { ModalAddDiscount } from '../../Modals/ModalAddDiscount/ModalAddDiscount';
+import { ModalAddDiscount } from 'components/Modals/ModalAddDiscount/ModalAddDiscount';
 
 export const OrderPayments = ({ order }) => {
   const [isOpenModal, setOpenModal] = useState(false);

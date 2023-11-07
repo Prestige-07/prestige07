@@ -64,11 +64,25 @@ export const DeleteIcon = styled(FiTrash2)`
 
 export const Label = styled.label`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+`;
+
+export const Select = styled.select`
+  margin-left: 8px;
+  padding-left: 8px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color var(--transition), color var(--transition);
+  :disabled {
+    background-color: transparent;
+    color: var(--white-color);
+    opacity: 1;
+  }
 `;
 
 export const Input = styled.input`
   margin-left: 8px;
+  padding-left: 8px;
   width: 100%;
   border: none;
   border-radius: 8px;
@@ -81,6 +95,7 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
   margin-left: 8px;
+  padding-left: 8px;
   resize: none;
   width: 100%;
   border: none;

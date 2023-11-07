@@ -71,3 +71,37 @@ export const deleteEmployeeById = createAsyncThunk(
     }
   }
 );
+
+export const addImageToEmployee = createAsyncThunk(
+  '/addImageToEmployee',
+  async ({ id, data }, thunkApi) => {
+    try {
+      const response = await instance.patch(
+        `/api/employees/${id}/add-image`,
+        data
+      );
+      toast.success('Зображення додано успішно');
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.message);
+      return thunkApi.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const deleteImageFromEmployee = createAsyncThunk(
+  '/deleteImageFromEmployee',
+  async ({ id, data }, thunkApi) => {
+    try {
+      const response = await instance.patch(
+        `/api/employees/${id}/delete-image`,
+        data
+      );
+      toast.success('Зображення видалено успішно');
+      return response.data;
+    } catch (error) {
+      toast.error(error.response.data.message);
+      return thunkApi.rejectWithValue(error.response.data);
+    }
+  }
+);

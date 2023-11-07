@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 
 import { ModalLayout } from '../ModalLayout';
 import { Title } from '../Modal.styles';
-import { Form, Input } from '../../../Forms/Forms.styled';
+import { Form, Input } from 'components/Forms/Forms.styled';
 import { MainButton } from 'components/Global/Global.styled';
 
 import { selectOrderByNumber } from 'redux/orders/ordersSelectors';

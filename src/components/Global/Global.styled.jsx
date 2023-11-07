@@ -6,9 +6,7 @@ export const MainContainer = styled.div`
   padding-left: 15px;
   padding-right: 15px;
 
-  @media screen and (min-width: 480px) {
-    max-width: 480px;
-  }
+  max-width: 480px;
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
@@ -20,7 +18,6 @@ export const MainContainer = styled.div`
 `;
 
 export const AdminContainer = styled.div`
-  padding: 0 15px;
   width: 100%;
   @media screen and (min-width: 768px) {
     padding: 0 30px;
@@ -74,7 +71,7 @@ export const MainButton = styled.button`
   box-shadow: 0px 0px 20px var(--accent-color);
 
   font-weight: 400;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.07em;
 
   border-radius: 25px;
@@ -103,7 +100,7 @@ export const MainLinkButton = styled.a`
   box-shadow: 0px 0px 20px var(--accent-color);
 
   font-weight: 400;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.07em;
 
   @media screen and (min-width: 1200px) {

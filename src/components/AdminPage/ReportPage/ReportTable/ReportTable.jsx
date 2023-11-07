@@ -1,4 +1,6 @@
+import ExcelJS from 'exceljs';
 import { useSelector } from 'react-redux';
+
 import {
   selectOrders,
   selectEmployees,
@@ -18,6 +20,8 @@ import {
   TableHeader,
   TableData,
   TableCellServices,
+  DownloadBtn,
+  DownloadIcon,
 } from './ReportTable.styled';
 
 export const ReportingTable = () => {
@@ -25,10 +29,76 @@ export const ReportingTable = () => {
   const employees = useSelector(selectEmployees);
   const payments = useSelector(selectPayments);
 
+  const handleDownloadReport = async () => {
+    const workbook = new ExcelJS.Workbook();
+    const worksheetOrders = workbook.addWorksheet('Виконані замовлення');
+    const worksheetEmployeesPayments = workbook.addWorksheet(
+      'Виплата працівникам'
+    );
+    const worksheetPayments = workbook.addWorksheet('Дані про платежі');
+
+    worksheetOrders.addRow([
+      'Час заїзду',
+      'Марка ДНЗ',
+      'Контакти клієнта',
+      'Послуги',
+      'Вартість, грн',
+      'Спосіб оплати',
+      'Адміністратор',
+      'Працівник',
+    ]);
+
+    orders.forEach(order => {
+      worksheetOrders.addRow([
+        formatedDate(order.orderDate),
+        order.serviceObject,
+        order.clientPhone,
+        order.services.map(service => service.name).join(', '),
+        order.discountedCostOrder,
+        order.payment,
+        order.administrator,
+        order.washer,
+      ]);
+    });
+
+    worksheetEmployeesPayments.addRow(['Ім`я', 'грн']);
+
+    employees.forEach(employee => {
+      worksheetEmployeesPayments.addRow([employee.name, employee.payment]);
+    });
+
+    worksheetPayments.addRow(['Категорія', 'Сума, грн']);
+
+    worksheetPayments.addRow(['Всього каса:', payments.totalPayments]);
+    worksheetPayments.addRow(['Всього готівкою:', payments.totalCash]);
+    worksheetPayments.addRow(['Всього терміналом:', payments.totalCard]);
+    worksheetPayments.addRow([
+      'Всього заробітна плата:',
+      payments.totalEmployeesPayments,
+    ]);
+    worksheetPayments.addRow(['Дохід:', payments.profit]);
+
+    const buffer = await workbook.xlsx.writeBuffer();
+    const blob = new Blob([buffer], {
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'report.xlsx';
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <TableContainer>
       {orders && orders.length > 0 && (
         <>
+          <DownloadBtn type="button" onClick={handleDownloadReport}>
+            <DownloadIcon />
+          </DownloadBtn>
           <Title>Звітність за обраний період</Title>
           <Table>
             <TableHead>

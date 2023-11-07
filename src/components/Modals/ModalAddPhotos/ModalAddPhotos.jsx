@@ -62,16 +62,18 @@ export const ModalAddPhotos = props => {
             size="small"
           />
         </Label>
-        <Input
-          type="text"
-          id="beforeAlt"
-          name="beforeAlt"
-          label="Назва зображення"
-          value={formik.values.beforeAlt}
-          onChange={formik.handleChange}
-          variant="outlined"
-          size="small"
-        />
+        <Label>
+          Назва зображення
+          <Input
+            type="text"
+            id="beforeAlt"
+            name="beforeAlt"
+            value={formik.values.beforeAlt}
+            onChange={formik.handleChange}
+            variant="outlined"
+            size="small"
+          />
+        </Label>
         <Label>
           Фото після
           <Input
@@ -85,17 +87,18 @@ export const ModalAddPhotos = props => {
             size="small"
           />
         </Label>
-        <Input
-          type="text"
-          id="afterAlt"
-          name="afterAlt"
-          label="Назва зображення"
-          value={formik.values.afterAlt}
-          onChange={formik.handleChange}
-          variant="outlined"
-          size="small"
-        />
-
+        <Label>
+          Назва зображення
+          <Input
+            type="text"
+            id="afterAlt"
+            name="afterAlt"
+            value={formik.values.afterAlt}
+            onChange={formik.handleChange}
+            variant="outlined"
+            size="small"
+          />
+        </Label>
         <MainButton type="submit" color="var(--black-color)" margin={true}>
           Додати
         </MainButton>

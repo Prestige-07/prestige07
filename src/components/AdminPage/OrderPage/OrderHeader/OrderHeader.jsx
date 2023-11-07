@@ -10,18 +10,6 @@ import {
   StatusButton,
 } from './OrderHeader.styled';
 
-const statusColor = status => {
-  if (status === 'Нове') {
-    return 'var(--filter-new-color)';
-  } else if (status === 'В роботі') {
-    return 'var(--filter-inProcess-color)';
-  } else if (status === 'Скасоване') {
-    return 'var(--filter-cancelled-color)';
-  } else {
-    return 'var(--filter-completed-color)';
-  }
-};
-
 export const OrderHeader = ({ order }) => {
   const dispatch = useDispatch();
 
@@ -31,9 +19,7 @@ export const OrderHeader = ({ order }) => {
       {order.urgently && <MarkUrgency>Терміново!</MarkUrgency>}
 
       <Status>
-        <StatusButton color={statusColor(order.status)}>
-          {order.status}
-        </StatusButton>
+        <StatusButton color={order.status}>{order.status}</StatusButton>
         <StatusSelect
           onChange={e => {
             dispatch(

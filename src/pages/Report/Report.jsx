@@ -10,14 +10,11 @@ import { selectIsLoading } from 'redux/reporting/reportingSelectors';
 const ReportingPage = () => {
   const isLoading = useSelector(selectIsLoading);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   return (
-    <Section>
+    <Section paddingBottom={true}>
       <ReportSearchForm />
       <ReportingTable />
+      {isLoading && <Loading />}
     </Section>
   );
 };

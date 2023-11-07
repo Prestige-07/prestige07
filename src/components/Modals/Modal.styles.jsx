@@ -13,7 +13,8 @@ export const Backdrop = styled.div`
 
   width: 100%;
   height: 100%;
-  background-color: rgba(25, 28, 38, 0.8);
+  overflow: auto;
+  background-color: var(--backdrop-color);
 
   transition: transform var(--transition), opacity var(--transition),
     visibility var(--transition);
@@ -21,17 +22,27 @@ export const Backdrop = styled.div`
   visibility: ${props => (props.isOpen ? 'visible' : 'hidden')};
   opacity: ${props => (props.isOpen ? '1' : '0')};
   pointer-events: ${props => (props.isOpen ? 'auto' : 'none')};
-  transform: ${props => (props.isOpen ? 'scale(1)' : 'scale(0)')};
+  transform: ${props => (props.isOpen ? 'scale(1)' : 'scale(1.5)')};
 `;
 
 export const Modal = styled.div`
   position: relative;
-  padding: 50px;
-  width: 800px;
+
+  padding: 30px;
+  max-width: 480px;
+  width: 100%;
   background-color: var(--white-color);
 
   border: 4px solid var(--accent-color);
   border-radius: 12px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -49,8 +60,8 @@ export const Text = styled.p`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 0;
+  right: 0;
 
   background-color: transparent;
   border: none;

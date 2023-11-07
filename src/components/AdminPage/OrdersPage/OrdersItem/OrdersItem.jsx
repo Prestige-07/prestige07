@@ -11,56 +11,42 @@ import {
 
 import { formatedDate } from 'utils/formatedDate';
 
-export const OrdersItem = ({ order }) => {
-  const statusColor = ({ order }) => {
-    if (order.status === 'Нове') {
-      return 'var(--filter-new-color)';
-    } else if (order.status === 'В роботі') {
-      return 'var(--filter-inProcess-color)';
-    } else if (order.status === 'Скасоване') {
-      return 'var(--filter-cancelled-color)';
-    } else {
-      return 'var(--filter-completed-color)';
-    }
-  };
+export const OrdersItem = ({ order }) => (
+  <Item>
+    <OrderHeader>
+      <OrderLink to={`/admin/order/${order.orderNumber}`}>
+        {`Замовлення ${order.orderNumber}`}
+      </OrderLink>
+      {order.urgently && <MarkUrgency>Терміново!</MarkUrgency>}
+      <Status type="button" color={order.status}>
+        {`${order.status}`}
+      </Status>
+    </OrderHeader>
 
-  return (
-    <Item>
-      <OrderHeader>
-        <OrderLink to={`/admin/order/${order.orderNumber}`}>
-          {`Замовлення ${order.orderNumber}`}
-        </OrderLink>
-        {order.urgently && <MarkUrgency>Терміново!</MarkUrgency>}
-        <Status type="button" color={statusColor({ order })}>
-          {`${order.status}`}
-        </Status>
-      </OrderHeader>
+    <hr />
 
-      <hr />
+    <PartContainer>
+      <LeftSide>
+        <Text>{`Клієнт: ${order.clientName}`}</Text>
+        <Text>{`Контакти: ${order.clientPhone}`}</Text>
+        <Text>{`Об'єкт замовлення: ${
+          order.serviceObject ? order.serviceObject : ''
+        }`}</Text>
+        <Text>{`Дата та час послуги: ${formatedDate(order.orderDate)}`}</Text>
+        {order.orderExecutionDate && (
+          <Text>{`Дата та час виконання: ${formatedDate(
+            order.orderExecutionDate
+          )}`}</Text>
+        )}
+      </LeftSide>
+    </PartContainer>
 
-      <PartContainer>
-        <LeftSide>
-          <Text>{`Клієнт: ${order.clientName}`}</Text>
-          <Text>{`Контакти: ${order.clientPhone}`}</Text>
-          <Text>{`Об'єкт замовлення: ${
-            order.serviceObject ? order.serviceObject : ''
-          }`}</Text>
-          <Text>{`Дата та час послуги: ${formatedDate(order.orderDate)}`}</Text>
-          {order.orderExecutionDate && (
-            <Text>{`Дата та час виконання: ${formatedDate(
-              order.orderExecutionDate
-            )}`}</Text>
-          )}
-        </LeftSide>
-      </PartContainer>
+    <hr />
 
-      <hr />
+    <Text>{`Працівник: ${order.washer ? order.washer : ''}`}</Text>
 
-      <Text>{`Працівник: ${order.washer ? order.washer : ''}`}</Text>
+    <hr />
 
-      <hr />
-
-      <Text>{`Вартість замовлення: ${order.discountedCostOrder} грн`}</Text>
-    </Item>
-  );
-};
+    <Text>{`Вартість замовлення: ${order.discountedCostOrder} грн`}</Text>
+  </Item>
+);

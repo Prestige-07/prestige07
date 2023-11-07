@@ -15,8 +15,16 @@ import { selectGallery } from 'redux/gallery/gallerySelectors';
 
 export const GalleryList = () => {
   const gallery = useSelector(selectGallery);
-
   const dispatch = useDispatch();
+
+  const handleDeletePhotos = id => {
+    const confirmDelete = window.confirm(
+      'Ви впевнені, що хочете видалити зображення?'
+    );
+    if (confirmDelete) {
+      dispatch(deletePhotosGroup(id));
+    }
+  };
 
   return (
     <List>
@@ -36,7 +44,7 @@ export const GalleryList = () => {
             />
             <UnderTitle>Після</UnderTitle>
           </ImageThumb>
-          <DeleteButton onClick={() => dispatch(deletePhotosGroup(item._id))}>
+          <DeleteButton onClick={() => handleDeletePhotos(item._id)}>
             Видалити
           </DeleteButton>
         </Item>

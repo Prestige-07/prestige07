@@ -57,21 +57,21 @@ export const Table = styled.table`
   min-height: 90px;
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: #f4f4f4;
+  background-color: var(--table-background);
   color: black;
   border-radius: 8px;
   overflow: hidden;
 `;
 
 export const TableHead = styled.thead`
-  background-color: #0073e6;
+  background-color: var(--table-head);
   color: #fff;
   text-align: left;
 `;
 
 export const TableRow = styled.tr`
   &:nth-of-type(even) {
-    background-color: #e6e6e6;
+    background-color: var(--table-row);
   }
 `;
 

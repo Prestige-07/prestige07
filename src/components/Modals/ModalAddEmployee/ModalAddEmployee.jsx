@@ -3,7 +3,12 @@ import { useFormik } from 'formik';
 
 import { ModalLayout } from '../ModalLayout';
 import { Title } from '../Modal.styles';
-import { Form, Label, Input, FormCheckbox } from '../../../Forms/Forms.styled';
+import {
+  Form,
+  Label,
+  Input,
+  FormCheckbox,
+} from 'components/Forms/Forms.styled';
 import { MainButton } from 'components/Global/Global.styled';
 
 import { addEmployee } from 'redux/employees/employeesOperations';

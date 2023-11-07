@@ -20,7 +20,9 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   width: 100%;
+  max-width: 100%;
   color: var(--label-color);
+  font-size: 12px;
 `;
 
 export const LabelText = styled.p`

@@ -20,10 +20,21 @@ import {
   Text,
   Select,
 } from './EmployeesItem.styled';
+import { ImagesList } from '../ImagesList/ImagesList';
 
 export const EmployeesItem = ({ employee }) => {
   const [isEdit, setEdit] = useState(false);
   const dispatch = useDispatch();
+
+  const handleDeleteEmployee = id => {
+    const confirmDelete = window.confirm(
+      'Ви впевнені, що хочете видалити працівника?'
+    );
+    if (confirmDelete) {
+      dispatch(deleteEmployeeById(id));
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
       phone: employee.phone || '',
@@ -31,7 +42,6 @@ export const EmployeesItem = ({ employee }) => {
       worksFromDate: employee.worksFromDate || '',
     },
     onSubmit: values => {
-      console.log(values);
       dispatch(updateEmployeeById({ _id: employee._id, data: values }));
       setEdit(false);
     },
@@ -57,15 +67,14 @@ export const EmployeesItem = ({ employee }) => {
           Судимість:
           <Select
             required
-            type="text"
             id="criminal"
             name="criminal"
             value={formik.values.criminal}
             onChange={formik.handleChange}
             disabled={!isEdit}
           >
-            <option value="false">Ні</option>
-            <option value="true">Так</option>
+            <option value={false}>Ні</option>
+            <option value={true}>Так</option>
           </Select>
         </Label>
         {!isEdit && (
@@ -103,13 +112,14 @@ export const EmployeesItem = ({ employee }) => {
       {!isEdit && (
         <Button
           type="button"
-          onClick={() => dispatch(deleteEmployeeById(employee._id))}
+          onClick={() => handleDeleteEmployee(employee._id)}
           top="40px"
           right="8px"
         >
           <DeleteIcon />
         </Button>
       )}
+      <ImagesList employee={employee} />
     </Item>
   );
 };

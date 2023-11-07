@@ -12,7 +12,7 @@ import {
   Input,
   SelectOption,
   FormCheckbox,
-} from '../../../Forms/Forms.styled';
+} from 'components/Forms/Forms.styled';
 import { MainButton } from 'components/Global/Global.styled';
 
 import { getAllServices } from 'redux/services/servicesOperations';
@@ -134,7 +134,7 @@ export const ModaAddOrder = props => {
           >
             {services.map(service => (
               <SelectOption value={service} key={service._id}>
-                {`${service.category}. ${service.name}. ${service.price}грн`}
+                {`${service.name}. ${service.price}грн`}
               </SelectOption>
             ))}
           </FormSelect>

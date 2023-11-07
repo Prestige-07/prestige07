@@ -68,7 +68,8 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
-  padding: 5px;
+  margin-left: 8px;
+  padding-left: 8px;
   border: none;
   border-radius: 8px;
   transition: background-color var(--transition), color var(--transition);
@@ -81,6 +82,7 @@ export const Select = styled.select`
 
 export const Input = styled.input`
   margin-left: 8px;
+  padding-left: 8px;
   width: 100%;
   border: none;
   border-radius: 8px;

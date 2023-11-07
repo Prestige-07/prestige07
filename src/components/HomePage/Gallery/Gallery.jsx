@@ -32,7 +32,7 @@ export const Gallery = () => {
     infiniteLoop: true,
     showArrows: false,
     showThumbs: false,
-    emulateTouch: true,
+    // emulateTouch: true,
     showStatus: false,
     stopOnHover: true,
   };

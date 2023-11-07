@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FiDownload } from 'react-icons/fi';
 
 export const TableContainer = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: #f4f4f4;
+  background-color: var(--table-background);
   color: black;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -46,14 +47,14 @@ export const Table = styled.table`
 `;
 
 export const TableHead = styled.thead`
-  background-color: #0073e6;
+  background-color: var(--table-head);
   color: #fff;
   text-align: left;
 `;
 
 export const TableRow = styled.tr`
   &:nth-of-type(even) {
-    background-color: #e6e6e6;
+    background-color: var(--table-row);
   }
 `;
 
@@ -74,4 +75,26 @@ export const TableCellServices = styled.td`
     margin: 0;
     padding: 5px 0;
   }
+`;
+
+export const DownloadBtn = styled.button`
+  margin-left: auto;
+  width: 50px;
+  height: 50px;
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+
+  transition: opacity var(--transition);
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+export const DownloadIcon = styled(FiDownload)`
+  width: 30px;
+  height: 30px;
+  color: var(--download-color);
 `;

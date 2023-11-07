@@ -34,7 +34,18 @@ export const Status = styled.div`
 export const StatusButton = styled.div`
   display: inline-block;
   padding: 10px;
-  background-color: ${props => props.color};
+  background-color: ${props => {
+    switch (props.color) {
+      case 'Виконане':
+        return 'var(--filter-completed-color)';
+      case 'В роботі':
+        return 'var(--filter-inProcess-color)';
+      case 'Скасоване':
+        return 'var(--filter-cancelled-color)';
+      default:
+        return 'var(--filter-new-color)';
+    }
+  }};
   color: var(--black-color);
   cursor: pointer;
   border: none;

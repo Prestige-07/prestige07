@@ -45,7 +45,7 @@ const OrderPage = () => {
   }
 
   return (
-    <Section>
+    <Section paddingBottom={true}>
       <OrderCardContainer>
         <OrderHeader order={order} />
         <OrderForm order={order} employees={employees} admins={admins} />

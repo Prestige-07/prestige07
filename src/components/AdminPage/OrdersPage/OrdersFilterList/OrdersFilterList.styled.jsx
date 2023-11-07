@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 
 export const FilterList = styled.ul`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   list-style: none;
 `;
 
@@ -26,6 +27,4 @@ export const FilterButton = styled.button`
 
 export const AmountOrders = styled.span`
   margin-left: 5px;
-  // border-radius: 50%;
-  // background-color: white;
 `;
