@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
   Section,
-  HeaderContainer,
   SectionTitle,
   MainButton,
 } from 'components/Global/Global.styled';
@@ -37,16 +36,15 @@ const EmployeesPage = () => {
   }
   return (
     <Section paddingBottom={true}>
-      <HeaderContainer>
-        <SectionTitle>Працівники</SectionTitle>
-        <MainButton
-          type="button"
-          onClick={() => setOpenModal(true)}
-          color="var(--white-color)"
-        >
-          Додати працівника
-        </MainButton>
-      </HeaderContainer>
+      <MainButton
+        type="button"
+        onClick={() => setOpenModal(true)}
+        color="var(--white-color)"
+        position={true}
+      >
+        Додати працівника
+      </MainButton>
+      <SectionTitle>Працівники</SectionTitle>
 
       <EmployeesList />
 

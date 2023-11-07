@@ -8,7 +8,12 @@ export const Header = styled.div`
   border-bottom: 2px solid var(--white-color);
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  font-size: 14px;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+`;
 
 export const MarkUrgency = styled.b`
   display: inline-block;
@@ -16,8 +21,11 @@ export const MarkUrgency = styled.b`
   margin-right: 20px;
   padding: 5px;
   background-color: red;
-  font-size: 16px;
   border-radius: 12px;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Status = styled.div`
@@ -51,6 +59,10 @@ export const StatusButton = styled.div`
   border: none;
   border-radius: 5px;
   position: relative;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
   &:hover {
     background-color: #0056b3;
   }

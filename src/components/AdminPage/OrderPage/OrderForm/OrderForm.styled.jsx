@@ -34,6 +34,10 @@ export const Label = styled.label`
   display: flex;
   align-items: center;
   gap: 12px;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const TextArea = styled.textarea`

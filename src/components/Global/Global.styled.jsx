@@ -19,6 +19,7 @@ export const MainContainer = styled.div`
 
 export const AdminContainer = styled.div`
   width: 100%;
+  max-width: 1600px;
   @media screen and (min-width: 768px) {
     padding: 0 30px;
   }
@@ -27,23 +28,14 @@ export const AdminContainer = styled.div`
   }
 `;
 
-export const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 60px;
-`;
-
 export const Section = styled.section`
-  padding-top: 60px;
-  padding-bottom: ${props => props.paddingBottom && `60px`};
+  padding-top: 80px;
+  padding-bottom: ${props => props.paddingBottom && `80px`};
 
-  @media screen and (min-width: 768px) {
-    padding-top: 80px;
-    padding-bottom: ${props => props.paddingBottom && `80px`};
-  }
+  // @media screen and (min-width: 768px) {
+  //   padding-top: 80px;
+  //   padding-bottom: ${props => props.paddingBottom && `80px`};
+  // }
 `;
 
 export const SectionTitle = styled.h2`
@@ -62,6 +54,13 @@ export const SectionTitle = styled.h2`
 `;
 
 export const MainButton = styled.button`
+  ${props =>
+    props.position &&
+    `position: absolute;
+    top: 20px;
+    right: 20px;
+  `};
+
   margin: ${props => props.margin && `0 auto`};
   height: 50px;
   min-width: 200px;

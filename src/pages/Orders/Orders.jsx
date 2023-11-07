@@ -6,11 +6,7 @@ import ReactPaginate from 'react-paginate';
 import { getAllOrders } from 'redux/orders/ordersOperations';
 import { selectTotalPages } from 'redux/orders/ordersSelectors';
 
-import {
-  Section,
-  HeaderContainer,
-  MainButton,
-} from 'components/Global/Global.styled';
+import { Section, MainButton } from 'components/Global/Global.styled';
 import { ModaAddOrder } from 'components/Modals/ModaAddOrder/ModaAddOrder';
 import { OrdersList } from '../../components/AdminPage/OrdersPage/OrdersList/OrdersList';
 import { OrdersFilterList } from 'components/AdminPage/OrdersPage/OrdersFilterList/OrdersFilterList';
@@ -47,12 +43,14 @@ const OrdersPage = () => {
 
   return (
     <Section paddingBottom={true}>
-      <HeaderContainer>
-        <OrdersFilterList />
-        <MainButton type="button" onClick={() => setOpenModal(true)}>
-          Створити замовлення
-        </MainButton>
-      </HeaderContainer>
+      <MainButton
+        type="button"
+        onClick={() => setOpenModal(true)}
+        position={true}
+      >
+        Створити замовлення
+      </MainButton>
+      <OrdersFilterList />
 
       <OrdersList />
       {Number(totalPages) > 1 && (

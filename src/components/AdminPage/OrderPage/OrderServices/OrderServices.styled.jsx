@@ -14,7 +14,12 @@ export const Header = styled.div`
   margin-bottom: 20px;
 `;
 
-export const PartTitle = styled.h3``;
+export const PartTitle = styled.h3`
+  font-size: 14px;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+`;
 
 export const AddServices = styled.div`
   position: relative;
@@ -33,11 +38,15 @@ export const AddServicesButton = styled.div`
   display: inline-block;
   padding: 10px;
   background-color: #007bff;
-  // background-color: ${props => props.color};
   color: var(--black-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const ServicesSelect = styled.select`
@@ -59,8 +68,13 @@ export const Table = styled.table`
   border-spacing: 0;
   background-color: var(--table-background);
   color: black;
+  font-size: 12px;
   border-radius: 8px;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const TableHead = styled.thead`

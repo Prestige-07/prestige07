@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
   Section,
-  HeaderContainer,
   SectionTitle,
   MainButton,
 } from 'components/Global/Global.styled';
@@ -30,12 +29,14 @@ const Gallery = () => {
 
   return (
     <Section paddingBottom={true}>
-      <HeaderContainer>
-        <SectionTitle>Галерея зображень</SectionTitle>
-        <MainButton type="button" onClick={() => setOpenModal(true)}>
-          Додати зображення
-        </MainButton>
-      </HeaderContainer>
+      <MainButton
+        type="button"
+        onClick={() => setOpenModal(true)}
+        position={true}
+      >
+        Додати зображення
+      </MainButton>
+      <SectionTitle>Галерея зображень</SectionTitle>
       <GalleryList />
       <ModalAddPhotos handleExitModal={handleExitModal} isOpen={isOpenModal} />
       {isLoading && <Loading />}

@@ -6,7 +6,6 @@ import { getAllServices } from 'redux/services/servicesOperations';
 import { ServicesList } from 'components/AdminPage/ServicesPage/ServicesList/ServicesList';
 import {
   Section,
-  HeaderContainer,
   SectionTitle,
   MainButton,
 } from 'components/Global/Global.styled';
@@ -30,12 +29,14 @@ const ServicesPage = () => {
 
   return (
     <Section paddingBottom={true}>
-      <HeaderContainer>
-        <SectionTitle>Послуги</SectionTitle>
-        <MainButton type="button" onClick={() => setOpenModal(true)}>
-          Додати послугу
-        </MainButton>
-      </HeaderContainer>
+      <MainButton
+        type="button"
+        onClick={() => setOpenModal(true)}
+        position={true}
+      >
+        Додати послугу
+      </MainButton>
+      <SectionTitle>Послуги</SectionTitle>
 
       <ServicesList />
 

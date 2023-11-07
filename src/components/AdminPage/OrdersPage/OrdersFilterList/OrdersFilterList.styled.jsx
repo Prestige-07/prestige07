@@ -5,6 +5,7 @@ export const FilterList = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+  margin-bottom: 20px;
   list-style: none;
 `;
 

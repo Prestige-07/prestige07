@@ -32,7 +32,7 @@ export const UserIcon = styled(FiUser)`
 
 export const UserName = styled.p`
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 `;
@@ -66,7 +66,7 @@ export const PageLink = styled(NavLink)`
   color: #ffffff;
 
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   border-radius: 12px;
