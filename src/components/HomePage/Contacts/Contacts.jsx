@@ -34,7 +34,7 @@ export const Contacts = () => {
                       rel="noreferrer"
                     >
                       <MapIcon />
-                      м.Київ, Карельський провулок, 7
+                      м.Київ, Фінський провулок, 7
                     </AddressLink>
                   </AddressItem>
                   <AddressItem>

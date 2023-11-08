@@ -21,3 +21,16 @@ export const FeaturesList = styled.ul`
   gap: 4px;
   padding-left: 20px;
 `;
+
+export const ImagesList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+`;
+
+export const ImagesItem = styled.li`
+  flex-basis: calc(50% - 6px);
+  border-radius: 8px;
+  overflow: hidden;
+`;

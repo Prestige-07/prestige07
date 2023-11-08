@@ -4,7 +4,7 @@ export const HeroSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 60px;
   margin-right: auto;
   margin-left: auto;
 
@@ -14,7 +14,12 @@ export const HeroSection = styled.section`
   background-position: center;
   background-size: cover;
 
+  @media screen and (min-width: 768px) {
+    margin-top: 102px;
+  }
+
   @media screen and (min-width: 1200px) {
+    margin-top: 80px;
     padding-bottom: 100px;
     max-width: 1600px;
     height: 750px;
