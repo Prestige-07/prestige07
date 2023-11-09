@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const GalleryWrapper = styled.div`
   display: flex;
+  gap: 30px;
   padding-bottom: 40px;
   @media screen and (max-width: 767px) {
     flex-direction: column;
@@ -10,7 +11,6 @@ export const GalleryWrapper = styled.div`
 
 export const GalleryItem = styled.div`
   position: relative;
-  margin: 0 2px;
   height: 300px;
   @media screen and (min-width: 768px) {
     flex-basis: 50%;

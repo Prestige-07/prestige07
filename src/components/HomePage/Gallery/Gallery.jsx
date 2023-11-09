@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
@@ -19,6 +19,7 @@ import { getGallery } from 'redux/gallery/galleryOperations';
 import { selectGallery } from 'redux/gallery/gallerySelectors';
 
 export const Gallery = () => {
+  const [isAutoplayStarted, setIsAutoplayStarted] = useState(false);
   const gallery = useSelector(selectGallery);
   const dispatch = useDispatch();
 
@@ -26,8 +27,16 @@ export const Gallery = () => {
     dispatch(getGallery());
   }, [dispatch]);
 
+  useEffect(() => {
+    const startAutoplay = () => {
+      setIsAutoplayStarted(true);
+    };
+
+    setTimeout(startAutoplay, 1000);
+  }, []);
+
   const sliderSettings = {
-    autoPlay: true,
+    autoPlay: isAutoplayStarted,
     interval: 3000,
     infiniteLoop: true,
     showArrows: false,

@@ -25,12 +25,12 @@ export const FeaturesList = styled.ul`
 export const ImagesList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 30px;
   list-style: none;
 `;
 
 export const ImagesItem = styled.li`
-  flex-basis: calc(50% - 6px);
+  flex-basis: calc(50% - 15px);
   border-radius: 8px;
   overflow: hidden;
 `;
