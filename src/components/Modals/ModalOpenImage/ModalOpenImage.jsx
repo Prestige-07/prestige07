@@ -1,4 +1,5 @@
 import { ModalLayout } from '../ModalLayout';
+import { Image } from './ModalOpenImage.styled';
 
 export const ModalOpenImage = props => {
   const handleExitModal = () => props.handleExitModal();
@@ -15,7 +16,7 @@ export const ModalOpenImage = props => {
       handleBackdropClick={handleBackdropClick}
       isOpen={props.isOpen}
     >
-      <img src={props.image} alt="Документ" />
+      <Image src={props.image} alt="Документ" />
     </ModalLayout>
   );
 };

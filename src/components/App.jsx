@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { PrivateRoute } from 'utils/PrivateRouter';
 
 import { Loading } from './Loading/Loading';
 
@@ -19,7 +20,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />}>
+        <Route path="/admin" element={<PrivateRoute component={<Admin />} />}>
           <Route path="orders" element={<Orders />} />
           <Route path="order/:id" element={<Order />} />
           <Route path="employees" element={<Employees />} />
@@ -33,42 +34,3 @@ export const App = () => {
     </Suspense>
   );
 };
-
-// export const App = () => {
-//   return (
-//     <Suspense fallback={<Loading />}>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/admin" element={<PrivateRoute component={<Admin />} />}>
-//           <Route
-//             path="orders"
-//             element={<PrivateRoute component={<Orders />} />}
-//           />
-//           <Route
-//             path="order/:id"
-//             element={<PrivateRoute component={<Order />} />}
-//           />
-//           <Route
-//             path="employees"
-//             element={<PrivateRoute component={<Employees />} />}
-//           />
-//           <Route
-//             path="services"
-//             element={<PrivateRoute component={<Services />} />}
-//           />
-//           <Route
-//             path="reports"
-//             element={<PrivateRoute component={<Report />} />}
-//           />
-//           <Route
-//             path="gallery"
-//             element={<PrivateRoute component={<Gallery />} />}
-//           />
-//           <Route path="*" element={<h2>Page not found</h2>} />
-//         </Route>
-//         <Route path="*" element={<h2>Page not found</h2>} />
-//       </Routes>
-//     </Suspense>
-//   );
-// };

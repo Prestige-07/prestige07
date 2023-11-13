@@ -18,6 +18,8 @@ import {
   Select,
   TextArea,
   Input,
+  TextWrapper,
+  Text,
 } from './ServiceItem.styled';
 
 export const ServicesItem = ({ service }) => {
@@ -49,18 +51,25 @@ export const ServicesItem = ({ service }) => {
   return (
     <Item>
       <Form onSubmit={formik.handleSubmit}>
-        <Label>
-          Назва:
-          <TextArea
-            required
-            type="text"
-            id="name"
-            name="name"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            disabled={!isEdit}
-          />
-        </Label>
+        {isEdit ? (
+          <Label>
+            Назва:
+            <TextArea
+              required
+              type="text"
+              id="name"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              disabled={!isEdit}
+            />
+          </Label>
+        ) : (
+          <TextWrapper>
+            <Text>Назва:</Text>
+            <Text>{service.name}</Text>
+          </TextWrapper>
+        )}
         <Label>
           Вартість:
           <Input

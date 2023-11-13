@@ -31,6 +31,7 @@ export const Modal = styled.div`
   padding: 30px;
   max-width: 480px;
   width: 100%;
+
   background-color: var(--white-color);
 
   border: 4px solid var(--accent-color);

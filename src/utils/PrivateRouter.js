@@ -1,15 +1,35 @@
-// import { Navigate } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
-// import {
-//   selectIsLoggedIn,
-//   selectIsAuthLoading,
-// } from 'redux/auth/authSelectors';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
-// export const PrivateRoute = ({ component: Component }) => {
-//   const isLoggedIn = useSelector(selectIsLoggedIn);
-//   const isLoading = useSelector(selectIsAuthLoading);
-//   const shouldRedirect = !isLoggedIn && !isLoading;
+import { selectIsLoggedIn } from 'redux/auth/authSelectors';
+import { getCurrentUser } from 'redux/auth/authOperations';
 
-//   return shouldRedirect ? <Navigate to="/login" /> : Component;
-//   //   return !isLoggedIn ? <Navigate to="/login" /> : Component;
-// };
+import { Loading } from 'components/Loading/Loading';
+
+export const PrivateRoute = ({ component }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const LocalStoreToken = localStorage.getItem('persist:auth');
+    if (LocalStoreToken) {
+      dispatch(getCurrentUser())
+        .then(() => {
+          setIsLoading(false);
+        })
+        .catch(error => {
+          setIsLoading(false);
+        });
+    } else {
+      setIsLoading(false);
+    }
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return isLoggedIn ? component : <Navigate to="/login" />;
+};

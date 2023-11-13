@@ -21,8 +21,6 @@ export const Item = styled.li`
   }
 `;
 
-export const Text = styled.p``;
-
 export const Form = styled.form`
   display: flex;
   justify-content: center;
@@ -62,13 +60,19 @@ export const DeleteIcon = styled(FiTrash2)`
   color: red;
 `;
 
+export const TextWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+export const Text = styled.p``;
+
 export const Label = styled.label`
   display: flex;
   align-items: center;
 `;
 
 export const Select = styled.select`
-  margin-left: 8px;
   padding-left: 8px;
   border: none;
   border-radius: 8px;
@@ -81,7 +85,6 @@ export const Select = styled.select`
 `;
 
 export const Input = styled.input`
-  margin-left: 8px;
   padding-left: 8px;
   width: 100%;
   border: none;

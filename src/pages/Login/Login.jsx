@@ -8,7 +8,7 @@ import { LoginWrapper, Label, Form, Input, HiddenBtn } from './Login.styled';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { MainButton } from 'components/Global/Global.styled';
 
-import { login } from 'redux/auth/authOperations';
+import { getCurrentUser, login } from 'redux/auth/authOperations';
 import { selectIsLoggedIn } from 'redux/auth/authSelectors';
 
 const LoginPage = () => {
@@ -16,6 +16,13 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  useEffect(() => {
+    const LocalStoreToken = localStorage.getItem('persist:auth');
+    if (LocalStoreToken) {
+      dispatch(getCurrentUser());
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     if (isLoggedIn) {

@@ -68,7 +68,6 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
-  margin-left: 8px;
   padding-left: 8px;
   border: none;
   border-radius: 8px;
@@ -81,7 +80,6 @@ export const Select = styled.select`
 `;
 
 export const Input = styled.input`
-  margin-left: 8px;
   padding-left: 8px;
   width: 100%;
   border: none;

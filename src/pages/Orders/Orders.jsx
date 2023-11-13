@@ -10,12 +10,14 @@ import { Section, MainButton } from 'components/Global/Global.styled';
 import { ModaAddOrder } from 'components/Modals/ModaAddOrder/ModaAddOrder';
 import { OrdersList } from '../../components/AdminPage/OrdersPage/OrdersList/OrdersList';
 import { OrdersFilterList } from 'components/AdminPage/OrdersPage/OrdersFilterList/OrdersFilterList';
+import { Loading } from 'components/Loading/Loading';
 
 const OrdersPage = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigation = useNavigate();
 
+  const [isLoading, setLoading] = useState(true);
   const [isOpenModal, setOpenModal] = useState(false);
   const totalPages = useSelector(selectTotalPages);
   const queryParams = new URLSearchParams(location.search);
@@ -23,7 +25,13 @@ const OrdersPage = () => {
   const page = queryParams.get('page') || 1;
 
   useEffect(() => {
-    dispatch(getAllOrders({ status, page }));
+    dispatch(getAllOrders({ status, page }))
+      .then(() => {
+        setLoading(false);
+      })
+      .catch(error => {
+        setLoading(false);
+      });
   }, [dispatch, status, page]);
 
   const handleExitModal = () => {
@@ -41,6 +49,10 @@ const OrdersPage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <Section paddingBottom={true}>
       <MainButton
@@ -57,7 +69,7 @@ const OrdersPage = () => {
         <ReactPaginate
           breakLabel="..."
           nextLabel=">"
-          onPageChange={handlePageClick}
+          onPageChange={e => handlePageClick(e)}
           pageRangeDisplayed={Math.ceil(totalPages)}
           pageCount={Math.ceil(totalPages)}
           previousLabel="<"

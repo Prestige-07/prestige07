@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { TextField } from '@mui/material';
-//  import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 export const LoginWrapper = styled.section`
   display: flex;
@@ -23,6 +22,7 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  position: relative;
   width: 100%;
 `;
 
@@ -32,9 +32,8 @@ export const Input = styled(TextField)`
 
 export const HiddenBtn = styled.button`
   position: absolute;
-  top: 50%;
-  right: 50px;
-  transform: translate(0, 20%);
+  top: 45%;
+  right: 0;
   padding: 0;
   background-color: transparent;
   border: none;
