@@ -64,6 +64,8 @@ export const ServicesSelect = styled.select`
 export const TableWrapper = styled.div`
   max-width: 100%;
   overflow-x: auto;
+  border-radius: 8px;
+  overflow: hidden;
 `;
 
 export const Table = styled.table`
@@ -74,8 +76,6 @@ export const Table = styled.table`
   background-color: var(--table-background);
   color: black;
   font-size: 12px;
-  border-radius: 8px;
-  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
