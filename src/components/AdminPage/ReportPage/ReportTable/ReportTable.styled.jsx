@@ -11,6 +11,8 @@ export const TableContainer = styled.div`
 export const TableWrapper = styled.div`
   max-width: 100%;
   overflow-x: auto;
+  border-radius: 8px;
+  overflow: hidden;
 `;
 
 export const TableThumb = styled.div`
@@ -43,11 +45,6 @@ export const Table = styled.table`
   border-spacing: 0;
   background-color: var(--table-background);
   color: black;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  overflow: hidden;
 `;
 
 export const TableHead = styled.thead`

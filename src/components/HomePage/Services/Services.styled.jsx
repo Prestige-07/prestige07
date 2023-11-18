@@ -9,7 +9,7 @@ export const ServicesWrapper = styled.div`
 export const ContentWrapper = styled.div`
   border-radius: 12px;
   padding: 30px 20px;
-  background-image: var(--services-gradient-bgc);
+  background-color: var(--shadow-bg-color);
 
   @media screen and (min-width: 1200px) {
     display: flex;
