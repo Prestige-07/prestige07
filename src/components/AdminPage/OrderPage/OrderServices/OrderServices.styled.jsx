@@ -65,7 +65,6 @@ export const TableWrapper = styled.div`
   max-width: 100%;
   overflow-x: auto;
   border-radius: 8px;
-  overflow: hidden;
 `;
 
 export const Table = styled.table`
