@@ -74,3 +74,16 @@ export const Select = styled.select`
     opacity: 1;
   }
 `;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+  max-width: 768px;
+`;
+
+export const Text = styled.p`
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+`;

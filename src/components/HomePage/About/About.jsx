@@ -1,3 +1,5 @@
+import { useInView } from 'react-intersection-observer';
+
 import {
   MainContainer,
   Section,
@@ -13,6 +15,10 @@ import {
 } from './About.styled';
 
 export const About = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
   return (
     <Section id="about">
       <MainContainer>
@@ -62,14 +68,14 @@ export const About = () => {
             </Text>
           </li>
         </FeaturesList>
-        <ImagesList>
-          <ImagesItem>
+        <ImagesList ref={ref}>
+          <ImagesItem isVisible={inView}>
             <img
               src="https://fgritb.knukim.edu.ua/images/news/2023/19.06.23/cafe-02.jpg"
               alt="Кафе"
             />
           </ImagesItem>
-          <ImagesItem>
+          <ImagesItem isVisible={inView}>
             <img
               src="https://fgritb.knukim.edu.ua/images/news/2023/19.06.23/cafe-03.jpg"
               alt="Кафе"

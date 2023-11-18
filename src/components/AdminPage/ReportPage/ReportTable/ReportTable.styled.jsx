@@ -5,8 +5,12 @@ export const TableContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-x: auto;
   max-width: 100%;
+`;
+
+export const TableWrapper = styled.div`
+  max-width: 100%;
+  overflow-x: auto;
 `;
 
 export const TableThumb = styled.div`

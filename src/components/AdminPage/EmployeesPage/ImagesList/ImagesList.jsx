@@ -17,7 +17,11 @@ export const ImagesList = ({ employee }) => {
           <ImagesItem key={image.id} employeeId={employee._id} image={image} />
         ))}
         <Item>
-          <AddBtn type="button" onClick={() => setOpenModal(true)}>
+          <AddBtn
+            type="button"
+            title="Додати зображення"
+            onClick={() => setOpenModal(true)}
+          >
             +
           </AddBtn>
         </Item>

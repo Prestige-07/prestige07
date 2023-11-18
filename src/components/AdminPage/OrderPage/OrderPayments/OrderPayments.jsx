@@ -21,7 +21,10 @@ export const OrderPayments = ({ order }) => {
     <PaymentsContainer>
       <PartHeader>
         <PartTitle>Розрахунок:</PartTitle>
-        <AddDiscountButton onClick={() => setOpenModal(true)}>
+        <AddDiscountButton
+          title="Додати знижку"
+          onClick={() => setOpenModal(true)}
+        >
           Додати знижку
         </AddDiscountButton>
       </PartHeader>

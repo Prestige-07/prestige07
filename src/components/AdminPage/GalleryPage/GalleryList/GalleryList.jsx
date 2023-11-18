@@ -44,7 +44,10 @@ export const GalleryList = () => {
             />
             <UnderTitle>Після</UnderTitle>
           </ImageThumb>
-          <DeleteButton onClick={() => handleDeletePhotos(item._id)}>
+          <DeleteButton
+            title="Видалити"
+            onClick={() => handleDeletePhotos(item._id)}
+          >
             Видалити
           </DeleteButton>
         </Item>

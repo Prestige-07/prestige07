@@ -31,11 +31,7 @@ export const AdminContainer = styled.div`
 export const Section = styled.section`
   padding-top: 80px;
   padding-bottom: ${props => props.paddingBottom && `80px`};
-
-  // @media screen and (min-width: 768px) {
-  //   padding-top: 80px;
-  //   padding-bottom: ${props => props.paddingBottom && `80px`};
-  // }
+  animation: fadeIn 0.5s ease-in-out forwards;
 `;
 
 export const SectionTitle = styled.h2`

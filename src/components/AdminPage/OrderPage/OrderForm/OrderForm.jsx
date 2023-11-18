@@ -12,6 +12,8 @@ import {
   TextArea,
   Input,
   Select,
+  TextWrapper,
+  Text,
 } from './OrderForm.styled';
 import { MainButton } from 'components/Global/Global.styled';
 
@@ -40,22 +42,33 @@ export const OrderForm = ({ order, employees, admins }) => {
 
   return (
     <Form onSubmit={formik.handleSubmit}>
-      <EditButton type="button" onClick={() => setEdit(!isEdit)}>
+      <EditButton
+        type="button"
+        title="Редагувати"
+        onClick={() => setEdit(!isEdit)}
+      >
         <EditIcon />
       </EditButton>
-      <Label>
-        Коментар:
-        <TextArea
-          disabled={!isEdit}
-          cols="60"
-          type="text"
-          id="clientComment"
-          name="clientComment"
-          value={formik.values.clientComment}
-          onChange={formik.handleChange}
-          variant="standard"
-        />
-      </Label>
+      {isEdit ? (
+        <Label>
+          Коментар:
+          <TextArea
+            disabled={!isEdit}
+            cols="60"
+            type="text"
+            id="clientComment"
+            name="clientComment"
+            value={formik.values.clientComment}
+            onChange={formik.handleChange}
+            variant="standard"
+          />
+        </Label>
+      ) : (
+        <TextWrapper>
+          <Text>Коментар:</Text>
+          <Text>{order.clientComment || ''}</Text>
+        </TextWrapper>
+      )}
       <Label>
         Клієнт:
         <Input

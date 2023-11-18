@@ -61,6 +61,11 @@ export const ServicesSelect = styled.select`
 
 // Табличка з послугами
 
+export const TableWrapper = styled.div`
+  max-width: 100%;
+  overflow-x: auto;
+`;
+
 export const Table = styled.table`
   width: 100%;
   min-height: 90px;

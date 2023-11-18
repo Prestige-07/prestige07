@@ -96,13 +96,14 @@ export const EmployeesItem = ({ employee }) => {
         )}
 
         {isEdit && (
-          <Button type="submit" top="40px" right="8px">
+          <Button type="submit" title="Зберегти зміни" top="40px" right="8px">
             <SaveIcon />
           </Button>
         )}
       </Form>
       <Button
         type="button"
+        title="Редагувати"
         onClick={() => setEdit(!isEdit)}
         top="8px"
         right="8px"
@@ -112,6 +113,7 @@ export const EmployeesItem = ({ employee }) => {
       {!isEdit && (
         <Button
           type="button"
+          title="Видалити"
           onClick={() => handleDeleteEmployee(employee._id)}
           top="40px"
           right="8px"

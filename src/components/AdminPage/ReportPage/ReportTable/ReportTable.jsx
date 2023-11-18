@@ -11,6 +11,7 @@ import { formatedDate } from 'utils/formatedDate';
 
 import {
   TableContainer,
+  TableWrapper,
   TableThumb,
   FlexContainer,
   Title,
@@ -39,7 +40,7 @@ export const ReportingTable = () => {
 
     worksheetOrders.addRow([
       'Час заїзду',
-      'Марка ДНЗ',
+      "Об'єкт",
       'Контакти клієнта',
       'Послуги',
       'Вартість, грн',
@@ -100,38 +101,40 @@ export const ReportingTable = () => {
             <DownloadIcon />
           </DownloadBtn>
           <Title>Звітність за обраний період</Title>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableHeader>Час заїзду</TableHeader>
-                <TableHeader>Марка ДНЗ</TableHeader>
-                <TableHeader>Контакти клієнта</TableHeader>
-                <TableHeader>Послуги</TableHeader>
-                <TableHeader>Вартість, грн</TableHeader>
-                <TableHeader>Спосіб оплати</TableHeader>
-                <TableHeader>Адміністратор</TableHeader>
-                <TableHeader>Працівник</TableHeader>
-              </TableRow>
-            </TableHead>
-            <tbody>
-              {orders.map(order => (
-                <TableRow key={order._id}>
-                  <TableData>{formatedDate(order.orderDate)}</TableData>
-                  <TableData>{order.serviceObject}</TableData>
-                  <TableData>{order.clientPhone}</TableData>
-                  <TableCellServices>
-                    {order.services.map(service => (
-                      <p key={service._id}>{service.name}</p>
-                    ))}
-                  </TableCellServices>
-                  <TableData>{order.discountedCostOrder}</TableData>
-                  <TableData>{order.payment}</TableData>
-                  <TableData>{order.administrator}</TableData>
-                  <TableData>{order.washer}</TableData>
+          <TableWrapper>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableHeader>Час заїзду</TableHeader>
+                  <TableHeader>Об'єкт</TableHeader>
+                  <TableHeader>Контакти клієнта</TableHeader>
+                  <TableHeader>Послуги</TableHeader>
+                  <TableHeader>Вартість, грн</TableHeader>
+                  <TableHeader>Спосіб оплати</TableHeader>
+                  <TableHeader>Адміністратор</TableHeader>
+                  <TableHeader>Працівник</TableHeader>
                 </TableRow>
-              ))}
-            </tbody>
-          </Table>
+              </TableHead>
+              <tbody>
+                {orders.map(order => (
+                  <TableRow key={order._id}>
+                    <TableData>{formatedDate(order.orderDate)}</TableData>
+                    <TableData>{order.serviceObject}</TableData>
+                    <TableData>{order.clientPhone}</TableData>
+                    <TableCellServices>
+                      {order.services.map(service => (
+                        <p key={service._id}>{service.name}</p>
+                      ))}
+                    </TableCellServices>
+                    <TableData>{order.discountedCostOrder}</TableData>
+                    <TableData>{order.payment}</TableData>
+                    <TableData>{order.administrator}</TableData>
+                    <TableData>{order.washer}</TableData>
+                  </TableRow>
+                ))}
+              </tbody>
+            </Table>
+          </TableWrapper>
         </>
       )}
       <FlexContainer>

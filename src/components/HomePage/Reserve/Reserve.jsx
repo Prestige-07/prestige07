@@ -52,9 +52,9 @@ export const Reserve = () => {
         'Номер телефону повинен відповідати формату +380XXXXXXXXX'
       )
       .required('Введіть свій номер телефону'),
-    orderDate: yup
-      .string('Введіть бажаний час бронювання')
-      .required('Введіть бажаний час бронювання'),
+    // orderDate: yup
+    //   .string('Введіть бажаний час бронювання')
+    //   .required('Введіть бажаний час бронювання'),
     clientComment: yup
       .string()
       .max(500, 'Коментар повинен бути не більше 500 символів'),
@@ -142,19 +142,19 @@ export const Reserve = () => {
             </Label>
 
             <Label>
-              Бажаний час *
+              Бажаний час (необов'язково)
               <Input
-                required
+                // required
                 type="datetime-local"
                 id="orderDate"
                 name="orderDate"
                 value={formik.values.orderDate}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={
-                  formik.touched.orderDate && Boolean(formik.errors.orderDate)
-                }
-                helperText={formik.touched.orderDate && formik.errors.orderDate}
+                // onBlur={formik.handleBlur}
+                // error={
+                //   formik.touched.orderDate && Boolean(formik.errors.orderDate)
+                // }
+                // helperText={formik.touched.orderDate && formik.errors.orderDate}
                 variant="standard"
               />
             </Label>

@@ -11,6 +11,7 @@ import {
   AddServices,
   AddServicesButton,
   ServicesSelect,
+  TableWrapper,
   Table,
   TableHead,
   TableRow,
@@ -76,7 +77,9 @@ export const OrderServices = ({ services, orderNumber }) => {
       <Header>
         <PartTitle>Послуги:</PartTitle>
         <AddServices>
-          <AddServicesButton>Додати послугу</AddServicesButton>
+          <AddServicesButton title="Додати послугу">
+            Додати послугу
+          </AddServicesButton>
           <ServicesSelect
             onChange={e => handleAddService(JSON.parse(e.target.value))}
           >
@@ -91,46 +94,52 @@ export const OrderServices = ({ services, orderNumber }) => {
       </Header>
 
       {services && (
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableNameHeader>Назва</TableNameHeader>
-              <TableHeader>Кількість</TableHeader>
-              <TableHeader>Вартість</TableHeader>
-              <TableHeader>Сума</TableHeader>
-              <TableHeader></TableHeader>
-            </TableRow>
-          </TableHead>
-          <tbody>
-            {services.map(service => (
-              <TableRow key={service._id}>
-                <TableData>{service.name}</TableData>
-                <TableData>
-                  {service.pricePerMeter ? (
-                    <AmountInput
-                      type="number"
-                      defaultValue={service.amount || 1}
-                      min="1"
-                      onChange={e =>
-                        handleChangeAmount(service._id, e.target.value)
-                      }
-                    />
-                  ) : (
-                    1
-                  )}
-                </TableData>
-
-                <TableData>{service.price}</TableData>
-                <TableData>{service.price * (service.amount || 1)}</TableData>
-                <TableData>
-                  <DeleteBtn onClick={() => handleDeleteService(service._id)}>
-                    <DeleteIcon />
-                  </DeleteBtn>
-                </TableData>
+        <TableWrapper>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableNameHeader>Назва</TableNameHeader>
+                <TableHeader>Кількість</TableHeader>
+                <TableHeader>Вартість</TableHeader>
+                <TableHeader>Сума</TableHeader>
+                <TableHeader></TableHeader>
               </TableRow>
-            ))}
-          </tbody>
-        </Table>
+            </TableHead>
+            <tbody>
+              {services.map(service => (
+                <TableRow key={service._id}>
+                  <TableData>{service.name}</TableData>
+                  <TableData>
+                    {service.pricePerMeter ? (
+                      <AmountInput
+                        type="number"
+                        defaultValue={service.amount || 1}
+                        min="1"
+                        onChange={e =>
+                          handleChangeAmount(service._id, e.target.value)
+                        }
+                      />
+                    ) : (
+                      1
+                    )}
+                  </TableData>
+
+                  <TableData>{service.price}</TableData>
+                  <TableData>{service.price * (service.amount || 1)}</TableData>
+                  <TableData>
+                    <DeleteBtn
+                      type="button"
+                      title="Видалити послугу"
+                      onClick={() => handleDeleteService(service._id)}
+                    >
+                      <DeleteIcon />
+                    </DeleteBtn>
+                  </TableData>
+                </TableRow>
+              ))}
+            </tbody>
+          </Table>
+        </TableWrapper>
       )}
     </ServicesContainer>
   );

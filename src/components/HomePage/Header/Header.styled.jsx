@@ -10,6 +10,7 @@ export const HeaderWrapper = styled.header`
   z-index: 100;
   width: 100%;
   background-image: var(--header-bg-color);
+  animation: fadeIn 0.5s ease-in-out forwards;
 `;
 
 export const HeaderContainer = styled.div`

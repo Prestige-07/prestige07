@@ -30,9 +30,14 @@ export const ImagesItem = ({ employeeId, image }) => {
       <Image
         src={image.url}
         alt="Документ"
+        title="Відкрити зображення"
         onClick={() => setOpenModal(true)}
       />
-      <DelBtn type="button" onClick={() => handleDeleteImage(image.id)}>
+      <DelBtn
+        type="button"
+        title="Видалити"
+        onClick={() => handleDeleteImage(image.id)}
+      >
         <DelIcon />
       </DelBtn>
       <ModalOpenImage
