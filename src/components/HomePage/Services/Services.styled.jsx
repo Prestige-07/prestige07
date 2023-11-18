@@ -25,7 +25,7 @@ export const ServicesList = styled.ul`
   @media screen and (min-width: 1200px) {
     padding: 30px 20px;
     width: 570px;
-    background-image: var(--services-gradient-bgc);
+    background-color: var(--shadow-bg-color);
   }
   @media screen and (max-width: 1199px) {
     &:not(:last-child) {

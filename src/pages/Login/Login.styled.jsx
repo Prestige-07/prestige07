@@ -32,7 +32,7 @@ export const Input = styled(TextField)`
 
 export const HiddenBtn = styled.button`
   position: absolute;
-  top: 45%;
+  top: 50%;
   right: 0;
   padding: 0;
   background-color: transparent;

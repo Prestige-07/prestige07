@@ -13,6 +13,7 @@ export const HeroSection = styled.section`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  animation: fadeIn 0.5s ease-in-out forwards;
 
   @media screen and (min-width: 768px) {
     margin-top: 102px;
@@ -37,6 +38,7 @@ export const Container = styled.div`
   height: max-content;
 
   background-color: rgba(0, 0, 0, 0.7);
+  animation: rotate 0.7s linear both;
   border-radius: 12px;
 
   @media screen and (min-width: 1200px) {

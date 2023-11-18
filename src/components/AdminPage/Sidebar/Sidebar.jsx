@@ -24,7 +24,7 @@ export const Sidebar = () => {
       <UserWrapper>
         <UserIcon />
         <UserName>{user.name}</UserName>
-        <Logout type="button" onClick={() => dispatch(logout())}>
+        <Logout type="button" title="Вийти" onClick={() => dispatch(logout())}>
           <LogoutIcon />
         </Logout>
       </UserWrapper>

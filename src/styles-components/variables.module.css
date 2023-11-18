@@ -18,7 +18,7 @@
     rgba(25, 28, 38, 1),
     rgba(25, 28, 38, 0.5)
   );
-  --shadow-bg-color: rgba(0, 0, 0, 0.7);
+  --shadow-bg-color: rgba(25, 28, 38, 0.7);
   --footer-bg-color: #d6d7d8;
   --admin-items-bg-color: #424549;
 
@@ -30,11 +30,6 @@
     circle,
     rgba(30, 33, 36, 0.2) 0%,
     rgba(30, 33, 36, 1) 90%
-  );
-  --services-gradient-bgc: linear-gradient(
-    180deg,
-    #171a24 0%,
-    rgba(23, 26, 36, 0.2) 100%
   );
 
   /* buttons colors */

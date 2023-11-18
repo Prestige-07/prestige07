@@ -32,7 +32,9 @@ export const OrdersItem = ({ order }) => (
         <Text>{`Об'єкт замовлення: ${
           order.serviceObject ? order.serviceObject : ''
         }`}</Text>
-        <Text>{`Дата та час послуги: ${formatedDate(order.orderDate)}`}</Text>
+        <Text>{`Дата та час заїзду: ${
+          order.orderDate ? formatedDate(order.orderDate) : ''
+        }`}</Text>
         {order.orderExecutionDate && (
           <Text>{`Дата та час виконання: ${formatedDate(
             order.orderExecutionDate
