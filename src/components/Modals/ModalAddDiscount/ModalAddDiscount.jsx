@@ -18,12 +18,6 @@ export const ModalAddDiscount = props => {
     props.handleExitModal(true);
   };
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
-      handleExitModal(true);
-    }
-  };
-
   const formik = useFormik({
     initialValues: {
       discountPercent: '',
@@ -37,11 +31,7 @@ export const ModalAddDiscount = props => {
   });
 
   return (
-    <ModalLayout
-      handleExitModal={handleExitModal}
-      handleBackdropClick={handleBackdropClick}
-      isOpen={props.isOpen}
-    >
+    <ModalLayout handleExitModal={handleExitModal} isOpen={props.isOpen}>
       <Title>Додати знижку</Title>
       <Form onSubmit={formik.handleSubmit}>
         <Input

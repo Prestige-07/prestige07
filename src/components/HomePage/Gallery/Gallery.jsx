@@ -55,6 +55,7 @@ export const Gallery = () => {
             <GalleryWrapper key={item._id}>
               <GalleryItem key={item.beforePhoto.url}>
                 <Image
+                  loading="lazy"
                   src={item.beforePhoto.url}
                   alt={item.beforePhoto.alt || 'Зображення'}
                   width="100%"
@@ -64,6 +65,7 @@ export const Gallery = () => {
               </GalleryItem>
               <GalleryItem key={item.afterPhoto.url}>
                 <Image
+                  loading="lazy"
                   src={item.afterPhoto.url}
                   alt={item.afterPhoto.alt || 'Зображення'}
                   width="100%"

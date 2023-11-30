@@ -19,12 +19,6 @@ export const ModalAddPhotos = props => {
     props.handleExitModal(true);
   };
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
-      handleExitModal(true);
-    }
-  };
-
   const formik = useFormik({
     initialValues: {
       beforeAlt: '',
@@ -42,11 +36,7 @@ export const ModalAddPhotos = props => {
   });
 
   return (
-    <ModalLayout
-      handleExitModal={handleExitModal}
-      handleBackdropClick={handleBackdropClick}
-      isOpen={props.isOpen}
-    >
+    <ModalLayout handleExitModal={handleExitModal} isOpen={props.isOpen}>
       <Title>Додати фото</Title>
       <Form onSubmit={formik.handleSubmit}>
         <Label>

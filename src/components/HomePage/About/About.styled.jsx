@@ -20,26 +20,34 @@ export const FeaturesList = styled.ul`
   flex-direction: column;
   gap: 4px;
   padding-left: 20px;
+  margin-bottom: 12px;
 `;
 
 export const ImagesList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: space-between;
   list-style: none;
 `;
 
 export const ImagesItem = styled.li`
-  flex-basis: calc(50% - 15px);
+  flex-basis: calc(100% / 3 - 15px);
   border-radius: 8px;
   overflow: hidden;
 
   ${props =>
     props.isVisible &&
-    `&:first-of-type {
+    `
+    @media screen and (max-width: 767px) {
+      animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+      @media screen and (min-width: 768px) {
+    &:first-of-type {
     animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   &:last-child {
     animation: slide-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}`};
+}
+  }
+    `};
 `;

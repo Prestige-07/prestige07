@@ -20,12 +20,6 @@ export const ModalAddService = props => {
     props.handleExitModal(true);
   };
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
-      handleExitModal(true);
-    }
-  };
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -40,11 +34,7 @@ export const ModalAddService = props => {
   });
 
   return (
-    <ModalLayout
-      handleExitModal={handleExitModal}
-      handleBackdropClick={handleBackdropClick}
-      isOpen={props.isOpen}
-    >
+    <ModalLayout handleExitModal={handleExitModal} isOpen={props.isOpen}>
       <Title>Додати послугу</Title>
       <Form onSubmit={formik.handleSubmit}>
         <Input
