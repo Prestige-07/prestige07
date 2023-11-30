@@ -1,12 +1,8 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-
-import { getAllEmployeesForUser } from 'redux/employees/employeesOperations';
-import { selectEmployees } from 'redux/employees/employeesSelectors';
 
 import {
   MainContainer,
@@ -20,24 +16,11 @@ import {
   RightSide,
   Title,
 } from './Reserve.styled';
-import {
-  Input,
-  Label,
-  FormSelect,
-  FormCheckbox,
-  SelectOption,
-} from 'components/Forms/Forms.styled';
+import { Input, Label, FormCheckbox } from 'components/Forms/Forms.styled';
 import { ModalCreatedOrder } from 'components/Modals/ModalCreatedOrder/ModalCreatedOrder';
 
 export const Reserve = () => {
   const [isOpenModal, setOpenModal] = useState(false);
-
-  const employees = useSelector(selectEmployees);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllEmployeesForUser());
-  }, [dispatch]);
 
   const handleExitModal = () => {
     setOpenModal(false);
@@ -52,9 +35,6 @@ export const Reserve = () => {
         'Номер телефону повинен відповідати формату +380XXXXXXXXX'
       )
       .required('Введіть свій номер телефону'),
-    // orderDate: yup
-    //   .string('Введіть бажаний час бронювання')
-    //   .required('Введіть бажаний час бронювання'),
     clientComment: yup
       .string()
       .max(500, 'Коментар повинен бути не більше 500 символів'),
@@ -66,7 +46,6 @@ export const Reserve = () => {
       clientPhone: '+380',
       orderDate: '',
       clientComment: '',
-      washer: '',
       urgently: false,
     },
     validationSchema,
@@ -144,37 +123,15 @@ export const Reserve = () => {
             <Label>
               Бажаний час (необов'язково)
               <Input
-                // required
                 type="datetime-local"
                 id="orderDate"
                 name="orderDate"
                 value={formik.values.orderDate}
                 onChange={formik.handleChange}
-                // onBlur={formik.handleBlur}
-                // error={
-                //   formik.touched.orderDate && Boolean(formik.errors.orderDate)
-                // }
-                // helperText={formik.touched.orderDate && formik.errors.orderDate}
                 variant="standard"
               />
             </Label>
 
-            <Label>
-              Працівник (необов'язково)
-              <FormSelect
-                id="washer"
-                name="washer"
-                value={formik.values.washer}
-                onChange={formik.handleChange}
-                variant="standard"
-              >
-                {employees.map(washer => (
-                  <SelectOption value={washer.name} key={washer._id}>
-                    {washer.name}
-                  </SelectOption>
-                ))}
-              </FormSelect>
-            </Label>
             <Label>
               Залишити коментар (необов'язково)
               <Input

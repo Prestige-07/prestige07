@@ -71,14 +71,23 @@ export const About = () => {
         <ImagesList ref={ref}>
           <ImagesItem isVisible={inView}>
             <img
-              src="https://fgritb.knukim.edu.ua/images/news/2023/19.06.23/cafe-02.jpg"
-              alt="Кафе"
+              src="https://res.cloudinary.com/ddnujny0z/image/upload/v1699294572/prestige-gallery/jvhrtedjfwigci9nuxzi"
+              alt="Літня тераса кафе"
+              loading="lazy"
             />
           </ImagesItem>
           <ImagesItem isVisible={inView}>
             <img
-              src="https://fgritb.knukim.edu.ua/images/news/2023/19.06.23/cafe-03.jpg"
-              alt="Кафе"
+              src="https://res.cloudinary.com/ddnujny0z/image/upload/v1699294572/prestige-gallery/rg4qebcpi4qnu9iyaneo"
+              alt="Зона для замовлення"
+              loading="lazy"
+            />
+          </ImagesItem>
+          <ImagesItem isVisible={inView}>
+            <img
+              src="https://res.cloudinary.com/ddnujny0z/image/upload/v1699294572/prestige-gallery/p8fmyz7tpdylbnkiepan"
+              alt="Зона відпочинку"
+              loading="lazy"
             />
           </ImagesItem>
         </ImagesList>

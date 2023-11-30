@@ -13,12 +13,6 @@ export const ModalAddEmployeeImage = ({ id, isOpen, handleExitModal }) => {
 
   const dispatch = useDispatch();
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
-      handleExitModal();
-    }
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
     const formData = new FormData();
@@ -28,11 +22,7 @@ export const ModalAddEmployeeImage = ({ id, isOpen, handleExitModal }) => {
   };
 
   return (
-    <ModalLayout
-      handleExitModal={handleExitModal}
-      handleBackdropClick={handleBackdropClick}
-      isOpen={isOpen}
-    >
+    <ModalLayout handleExitModal={handleExitModal} isOpen={isOpen}>
       <Title>Додати зображення</Title>
       <Form onSubmit={handleSubmit}>
         <Input

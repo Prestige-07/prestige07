@@ -38,12 +38,6 @@ export const ModaAddOrder = props => {
     props.handleExitModal(true);
   };
 
-  const handleBackdropClick = e => {
-    if (e.target === e.currentTarget) {
-      handleExitModal(true);
-    }
-  };
-
   const formik = useFormik({
     initialValues: {
       clientName: '',
@@ -68,11 +62,7 @@ export const ModaAddOrder = props => {
   });
 
   return (
-    <ModalLayout
-      handleExitModal={handleExitModal}
-      handleBackdropClick={handleBackdropClick}
-      isOpen={props.isOpen}
-    >
+    <ModalLayout handleExitModal={handleExitModal} isOpen={props.isOpen}>
       <Title>Створити замовлення</Title>
       <Form onSubmit={formik.handleSubmit}>
         <Input

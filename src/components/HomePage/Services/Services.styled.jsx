@@ -16,7 +16,7 @@ export const ContentWrapper = styled.div`
     justify-content: center;
     gap: 30px;
     padding: 0;
-    background-image: none;
+    background: none;
   }
 `;
 
