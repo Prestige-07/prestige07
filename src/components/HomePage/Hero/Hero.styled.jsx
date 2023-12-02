@@ -38,6 +38,7 @@ export const Container = styled.div`
   height: max-content;
 
   background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
   animation: rotate 0.7s linear both;
   border-radius: 12px;
 

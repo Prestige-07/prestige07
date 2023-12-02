@@ -15,6 +15,7 @@ export const Backdrop = styled.div`
   height: 100%;
   overflow: auto;
   background-color: var(--backdrop-color);
+  backdrop-filter: blur(10px);
 
   transition: transform var(--transition), opacity var(--transition),
     visibility var(--transition);

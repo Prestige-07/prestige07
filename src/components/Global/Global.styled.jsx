@@ -63,14 +63,14 @@ export const MainButton = styled.button`
 
   color: ${props => (props.color ? props.color : 'var(--white-color)')};
   background-color: transparent;
-  box-shadow: 0px 0px 20px var(--accent-color);
+  box-shadow: var(--button-shadow);
 
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 0.07em;
 
   border-radius: 25px;
-  border: 1px solid var(--accent-color);
+  border: var(--button-border);
   cursor: pointer;
   transition: background-color var(--transition), color var(--transition);
 
@@ -92,7 +92,7 @@ export const MainLinkButton = styled.a`
   min-height: 50px;
   min-width: 200px;
 
-  box-shadow: 0px 0px 20px var(--accent-color);
+  box-shadow: var(--button-shadow);
 
   font-weight: 400;
   font-size: 13px;
@@ -105,8 +105,8 @@ export const MainLinkButton = styled.a`
   color: var(--white-color);
   background-color: transparent;
 
+  border: var(--button-border);
   border-radius: 25px;
-  border: 1px solid var(--accent-color);
   cursor: pointer;
   transition: background-color var(--transition), color var(--transition);
 

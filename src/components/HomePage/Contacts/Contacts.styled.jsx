@@ -47,7 +47,16 @@ export const AddressList = styled.ul`
   list-style: none;
 `;
 
-export const AddressItem = styled.li``;
+export const AddressItem = styled.li`
+  display: flex;
+  &:not(:first-of-type) > a {
+    margin-left: 8px;
+  }
+`;
+
+export const AddressDescription = styled.p`
+  font-style: normal;
+`;
 
 export const AddressLink = styled.a`
   transition: color var(--transition);
@@ -58,11 +67,11 @@ export const AddressLink = styled.a`
 `;
 
 export const MapIcon = styled(FiMapPin)`
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 export const PhoneIcon = styled(FiPhone)`
-  margin-right: 5px;
+  margin-right: 8px;
 `;
 
 export const ScheduleTitle = styled.h3`

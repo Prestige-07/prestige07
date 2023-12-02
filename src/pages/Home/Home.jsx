@@ -7,6 +7,8 @@ import { Reserve } from 'components/HomePage/Reserve/Reserve';
 import { About } from 'components/HomePage/About/About';
 import { Footer } from 'components/HomePage/Footer/Footer';
 
+import { ContactButton } from 'components/HomePage/ContactButton/ContactButton';
+
 const Home = () => {
   return (
     <>
@@ -15,9 +17,11 @@ const Home = () => {
       <About />
       <Services />
       <Gallery />
-      <Reserve />
       <Contacts />
+      <Reserve />
       <Footer />
+
+      <ContactButton />
     </>
   );
 };

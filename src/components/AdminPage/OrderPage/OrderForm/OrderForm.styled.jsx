@@ -42,7 +42,6 @@ export const Label = styled.label`
 
 export const TextArea = styled.textarea`
   padding: 5px;
-  resize: none;
   border: none;
   border-radius: 8px;
   transition: background-color var(--transition), color var(--transition);
