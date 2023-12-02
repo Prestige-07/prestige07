@@ -55,6 +55,7 @@ export const OrderForm = ({ order, employees, admins }) => {
           <TextArea
             disabled={!isEdit}
             cols="60"
+            rows="4"
             type="text"
             id="clientComment"
             name="clientComment"

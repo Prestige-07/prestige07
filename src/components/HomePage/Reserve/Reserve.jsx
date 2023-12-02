@@ -71,7 +71,7 @@ export const Reserve = () => {
   });
 
   return (
-    <Section id="reserve">
+    <Section id="reserve" paddingBottom={true}>
       <MainContainer>
         <ReserveWrapper>
           <LeftSide>

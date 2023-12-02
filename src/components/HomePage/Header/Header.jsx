@@ -11,7 +11,6 @@ import {
   NavItem,
   Link,
   Contacts,
-  TelIcon,
   MenuButton,
   MenuIcon,
 } from './Header.styled';
@@ -115,10 +114,6 @@ export const Header = () => {
           </Navigation>
 
           <Contacts>
-            <Link href="tel:+380961111111">
-              <TelIcon />
-              +38 096 111 11 11
-            </Link>
             <MainLinkButton
               href="#reserve"
               onClick={e => {

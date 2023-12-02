@@ -41,6 +41,9 @@
 
   --download-color: #0073e6;
 
+  --button-border: 1px solid #ccac00;
+  --button-shadow: 0px 0px 20px #ccac00;
+
   /* Modal colors */
   --backdrop-color: rgba(25, 28, 38, 0.8);
 

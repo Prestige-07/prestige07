@@ -10,6 +10,7 @@ import {
   AddressWrapper,
   AddressList,
   AddressItem,
+  AddressDescription,
   AddressLink,
   MapIcon,
   PhoneIcon,
@@ -19,7 +20,7 @@ import {
 
 export const Contacts = () => {
   return (
-    <Section id="contacts" paddingBottom={true}>
+    <Section id="contacts">
       <MainContainer>
         <ContactsWrapper>
           <LeftSide>
@@ -38,9 +39,17 @@ export const Contacts = () => {
                     </AddressLink>
                   </AddressItem>
                   <AddressItem>
-                    <AddressLink href="tel:+380961111111">
-                      <PhoneIcon />
-                      +38 096 111 11 11
+                    <PhoneIcon />
+                    <AddressDescription>Записатися:</AddressDescription>
+                    <AddressLink href="tel:+380681380707">
+                      +380681380707
+                    </AddressLink>
+                  </AddressItem>
+                  <AddressItem>
+                    <PhoneIcon />
+                    <AddressDescription>Гаряча лінія:</AddressDescription>
+                    <AddressLink href="tel:+380668838928">
+                      +380668838928
                     </AddressLink>
                   </AddressItem>
                 </AddressList>
