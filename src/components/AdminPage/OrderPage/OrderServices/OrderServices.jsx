@@ -49,12 +49,17 @@ export const OrderServices = ({ services, orderNumber }) => {
     const updatedServices = services.filter(
       preService => preService._id !== serviceId
     );
-    dispatch(
-      updateOrderByNumber({
-        number: orderNumber,
-        data: { services: updatedServices },
-      })
+    const confirmDelete = window.confirm(
+      'Ви впевнені, що хочете видалити послугу?'
     );
+    if (confirmDelete) {
+      dispatch(
+        updateOrderByNumber({
+          number: orderNumber,
+          data: { services: updatedServices },
+        })
+      );
+    }
   };
 
   const handleChangeAmount = (serviceId, newAmount) => {
