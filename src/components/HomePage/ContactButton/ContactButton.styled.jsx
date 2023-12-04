@@ -16,8 +16,8 @@ export const ContactsWrapper = styled.div`
 export const Button = styled.button`
   margin-bottom: 12px;
 
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
 
   background-color: transparent;
   backdrop-filter: blur(4px);
@@ -26,13 +26,21 @@ export const Button = styled.button`
   border: var(--button-border);
   border-radius: 50%;
   cursor: pointer;
+
+  transform: scale(1);
+  transition: transform var(--transition);
+
+  &:hover {
+    transform: scale(1.1)};
+  }
 `;
 
 export const Icon = styled(FiPhone)`
   width: 30px;
   height: 30px;
   color: var(--white-color);
-  animation: shakeAnimation 2s infinite;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  animation: shakeAnimation 2s infinite;я
 `;
 
 export const List = styled.ul`

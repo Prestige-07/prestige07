@@ -78,7 +78,6 @@ export const MobileMenu = ({ isOpen, handleExitMenu }) => {
       </Navigation>
 
       <ContactsWrapper>
-        <Link href="tel:+380961111111">+38 096 111 11 11</Link>
         <ReserveButton
           href="#reserve"
           onClick={e => {

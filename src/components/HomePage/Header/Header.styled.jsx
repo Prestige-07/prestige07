@@ -55,6 +55,7 @@ export const NavList = styled.ul`
 export const NavItem = styled.li``;
 
 export const Link = styled.a`
+  position: relative;
   display: block;
   padding-top: ${props => props.paddingTop && props.paddingTop};
   padding-bottom: ${props => props.paddingBottom && props.paddingBottom};
@@ -66,11 +67,32 @@ export const Link = styled.a`
   font-size: 11px;
   line-height: 1.14;
   text-decoration: none;
+  overflow: hidden;
 
   transition: color var(--transition);
 
   @media screen and (min-width: 1200px) {
     font-size: 14px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-99%);
+
+    width: 100%;
+    height: 3px;
+
+    border-radius: 4px;
+
+    transition: background-color var(--transition), transform var(--transition);
+  }
+
+  &:hover:after {
+    transform: translateX(0);
+    background-color: var(--header-text-color);
   }
 `;
 
