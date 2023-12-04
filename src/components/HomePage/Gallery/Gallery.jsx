@@ -8,12 +8,7 @@ import {
   Section,
   SectionTitle,
 } from 'components/Global/Global.styled';
-import {
-  GalleryWrapper,
-  GalleryItem,
-  Image,
-  Description,
-} from './Gallery.styled';
+import { Image } from './Gallery.styled';
 
 import { getGallery } from 'redux/gallery/galleryOperations';
 import { selectGallery } from 'redux/gallery/gallerySelectors';
@@ -39,7 +34,7 @@ export const Gallery = () => {
     autoPlay: isAutoplayStarted,
     interval: 3000,
     infiniteLoop: true,
-    showArrows: false,
+    showArrows: true,
     showThumbs: false,
     swipeable: false,
     showStatus: false,
@@ -52,28 +47,14 @@ export const Gallery = () => {
         <SectionTitle>Наші роботи</SectionTitle>
         <Carousel {...sliderSettings}>
           {gallery.map(item => (
-            <GalleryWrapper key={item._id}>
-              <GalleryItem key={item.beforePhoto.url}>
-                <Image
-                  loading="lazy"
-                  src={item.beforePhoto.url}
-                  alt={item.beforePhoto.alt || 'Зображення'}
-                  width="100%"
-                  height="auto"
-                />
-                <Description>До</Description>
-              </GalleryItem>
-              <GalleryItem key={item.afterPhoto.url}>
-                <Image
-                  loading="lazy"
-                  src={item.afterPhoto.url}
-                  alt={item.afterPhoto.alt || 'Зображення'}
-                  width="100%"
-                  height="auto"
-                />
-                <Description>Після</Description>
-              </GalleryItem>
-            </GalleryWrapper>
+            <Image
+              key={item._id}
+              loading="lazy"
+              src={item.beforePhoto.url}
+              alt={item.beforePhoto.alt || 'Зображення'}
+              width="100%"
+              height="auto"
+            />
           ))}
         </Carousel>
       </MainContainer>

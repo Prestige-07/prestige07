@@ -6,8 +6,8 @@ import {
   Item,
   ImageThumb,
   Image,
-  UnderTitle,
   DeleteButton,
+  DeleteIcon,
 } from './GalleryList.styled';
 
 import { deletePhotosGroup } from 'redux/gallery/galleryOperations';
@@ -35,20 +35,12 @@ export const GalleryList = () => {
               src={item.beforePhoto.url}
               alt={item.beforePhoto.alt || 'Зображення'}
             />
-            <UnderTitle>До</UnderTitle>
-          </ImageThumb>
-          <ImageThumb>
-            <Image
-              src={item.afterPhoto.url}
-              alt={item.afterPhoto.alt || 'Зображення'}
-            />
-            <UnderTitle>Після</UnderTitle>
           </ImageThumb>
           <DeleteButton
             title="Видалити"
             onClick={() => handleDeletePhotos(item._id)}
           >
-            Видалити
+            <DeleteIcon />
           </DeleteButton>
         </Item>
       ))}

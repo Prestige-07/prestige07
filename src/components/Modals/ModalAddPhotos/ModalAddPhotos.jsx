@@ -11,7 +11,6 @@ import { useState } from 'react';
 
 export const ModalAddPhotos = props => {
   const [before, setBefore] = useState(null);
-  const [after, setAfter] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -22,14 +21,11 @@ export const ModalAddPhotos = props => {
   const formik = useFormik({
     initialValues: {
       beforeAlt: '',
-      afterAlt: '',
     },
     onSubmit: values => {
       const formData = new FormData();
       formData.append('before', before);
-      formData.append('after', after);
       formData.append('beforeAlt', values.beforeAlt);
-      formData.append('afterAlt', values.afterAlt);
       dispatch(addPhotosGroup(formData));
       handleExitModal();
     },
@@ -40,7 +36,7 @@ export const ModalAddPhotos = props => {
       <Title>Додати фото</Title>
       <Form onSubmit={formik.handleSubmit}>
         <Label>
-          Фото до
+          Прикріпити фото
           <Input
             required
             type="file"
@@ -53,37 +49,12 @@ export const ModalAddPhotos = props => {
           />
         </Label>
         <Label>
-          Назва зображення
+          Назва фото
           <Input
             type="text"
             id="beforeAlt"
             name="beforeAlt"
             value={formik.values.beforeAlt}
-            onChange={formik.handleChange}
-            variant="outlined"
-            size="small"
-          />
-        </Label>
-        <Label>
-          Фото після
-          <Input
-            required
-            type="file"
-            id="afterPhoto"
-            name="afterPhoto"
-            value={formik.values.afterPhoto}
-            onChange={e => setAfter(e.currentTarget.files[0])}
-            variant="outlined"
-            size="small"
-          />
-        </Label>
-        <Label>
-          Назва зображення
-          <Input
-            type="text"
-            id="afterAlt"
-            name="afterAlt"
-            value={formik.values.afterAlt}
             onChange={formik.handleChange}
             variant="outlined"
             size="small"

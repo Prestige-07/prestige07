@@ -20,6 +20,20 @@ export const Services = () => {
           <ContentWrapper>
             <ServicesList>
               <ServicesItem>
+                <ServiceName>Детейлінг полірування</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Детейлінг хімчистка</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>Реставрація шкіри</ServiceName>
+              </ServicesItem>
+              <ServicesItem>
+                <ServiceName>
+                  Кварцовий захист (кераміка кузова, кераміка шкіри)
+                </ServiceName>
+              </ServicesItem>
+              <ServicesItem>
                 <ServiceName>
                   Мийка "Комплекс" (мийка, продування з витиранням, рідкий віск,
                   пилосос й вологе прибирання багажнику, протирання скла,
@@ -67,14 +81,15 @@ export const Services = () => {
               <ServicesItem>
                 <ServiceName>Твердий віск</ServiceName>
               </ServicesItem>
+            </ServicesList>
+
+            <ServicesList>
               <ServicesItem>
                 <ServiceName>Полімерний віск</ServiceName>
               </ServicesItem>
               <ServicesItem>
                 <ServiceName>Мийка двигуна</ServiceName>
               </ServicesItem>
-            </ServicesList>
-            <ServicesList>
               <ServicesItem>
                 <ServiceName>Зняття комах</ServiceName>
               </ServicesItem>

@@ -1,14 +1,21 @@
 import styled from '@emotion/styled';
+import { FiTrash2 } from 'react-icons/fi';
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Item = styled.li`
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  max-width: 93%;
   gap: 12px;
   padding: 8px;
 
@@ -16,37 +23,30 @@ export const Item = styled.li`
   border-radius: 8px;
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    width: calc(100% / 2 - 50px);
   }
 `;
 
 export const ImageThumb = styled.div`
-  position: relative;
   width: 100%;
   overflow: hidden;
   aspect-ratio: 16/12;
-
-  @media screen and (min-width: 768px) {
-    flex-basis: 50%;
-  }
 `;
 
 export const Image = styled.img``;
 
-export const UnderTitle = styled.p`
+export const DeleteButton = styled.button`
   position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 15px 0;
-  text-align: center;
-  width: 100%;
-  background-color: var(--shadow-bg-color);
+  top: 0;
+  right: -40px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
-export const DeleteButton = styled.button`
-  min-height: 40px;
-  background-color: red;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+export const DeleteIcon = styled(FiTrash2)`
+  width: 30px;
+  height: 30px;
+  color: red;
 `;
