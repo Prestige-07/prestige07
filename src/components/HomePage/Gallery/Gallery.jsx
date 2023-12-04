@@ -8,7 +8,7 @@ import {
   Section,
   SectionTitle,
 } from 'components/Global/Global.styled';
-import { Image } from './Gallery.styled';
+import { ImageWrapper, Image } from './Gallery.styled';
 
 import { getGallery } from 'redux/gallery/galleryOperations';
 import { selectGallery } from 'redux/gallery/gallerySelectors';
@@ -47,14 +47,16 @@ export const Gallery = () => {
         <SectionTitle>Наші роботи</SectionTitle>
         <Carousel {...sliderSettings}>
           {gallery.map(item => (
-            <Image
-              key={item._id}
-              loading="lazy"
-              src={item.beforePhoto.url}
-              alt={item.beforePhoto.alt || 'Зображення'}
-              width="100%"
-              height="auto"
-            />
+            <ImageWrapper>
+              <Image
+                key={item._id}
+                loading="lazy"
+                src={item.beforePhoto.url}
+                alt={item.beforePhoto.alt || 'Зображення'}
+                width="100%"
+                height="auto"
+              />
+            </ImageWrapper>
           ))}
         </Carousel>
       </MainContainer>
