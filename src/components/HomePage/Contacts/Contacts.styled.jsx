@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FiMapPin, FiPhone } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiInstagram } from 'react-icons/fi';
 
 export const ContactsWrapper = styled.div`
   display: flex;
@@ -49,7 +49,8 @@ export const AddressList = styled.ul`
 
 export const AddressItem = styled.li`
   display: flex;
-  &:not(:first-of-type) > a {
+  &:nth-child(2) > a,
+  &:nth-child(3) > a {
     margin-left: 8px;
   }
 `;
@@ -61,7 +62,8 @@ export const AddressDescription = styled.p`
 export const AddressLink = styled.a`
   transition: color var(--transition);
   color: inherit;
-  &:hover {
+  &:hover,
+  &:hover > svg {
     color: var(--accent-color);
   }
 `;
@@ -71,6 +73,10 @@ export const MapIcon = styled(FiMapPin)`
 `;
 
 export const PhoneIcon = styled(FiPhone)`
+  margin-right: 8px;
+`;
+
+export const InstagramIcon = styled(FiInstagram)`
   margin-right: 8px;
 `;
 

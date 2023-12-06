@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { ReactComponent } from '../../../images/icons/logo-without-star.svg';
+import { ReactComponent as MainLogo } from '../../../images/icons/logo-without-star.svg';
+import { ReactComponent as Instagram } from '../../../images/icons/instagram.svg';
 import { FiPhone } from 'react-icons/fi';
 import { Spin } from 'hamburger-react';
 
@@ -23,7 +24,7 @@ export const HeaderContainer = styled.div`
   }
 `;
 
-export const Logo = styled(ReactComponent)`
+export const Logo = styled(MainLogo)`
   position: relative;
   z-index: 100;
 
@@ -31,6 +32,27 @@ export const Logo = styled(ReactComponent)`
   height: 60px;
 
   fill: var(--accent-color);
+`;
+
+export const IconLink = styled.a`
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  color: var(--white-color);
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const InstagramIcon = styled(Instagram)`
+  width: 30px;
+  height: 30px;
 `;
 
 export const Navigation = styled.nav`
@@ -90,7 +112,8 @@ export const Link = styled.a`
     transition: background-color var(--transition), transform var(--transition);
   }
 
-  &:hover:after {
+  &:hover:after,
+  &:focus:after {
     transform: translateX(0);
     background-color: var(--header-text-color);
   }
@@ -128,7 +151,6 @@ export const MenuButton = styled.button`
   z-index: 100;
   background-color: transparent;
   border: none;
-  margin-left: auto;
 
   @media screen and (min-width: 768px) {
     display: none;

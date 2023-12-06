@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import { useInView } from 'react-intersection-observer';
 
 import {
   MainContainer,
@@ -18,38 +19,37 @@ export const Gallery = () => {
   const gallery = useSelector(selectGallery);
   const dispatch = useDispatch();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
+
   useEffect(() => {
     dispatch(getGallery());
   }, [dispatch]);
 
   useEffect(() => {
-    const startAutoplay = () => {
-      setIsAutoplayStarted(true);
-    };
-
-    setTimeout(startAutoplay, 1000);
-  }, []);
+    setIsAutoplayStarted(inView);
+  }, [inView]);
 
   const sliderSettings = {
+    selectedItem: isAutoplayStarted && 0,
     autoPlay: isAutoplayStarted,
-    interval: 3000,
     infiniteLoop: true,
     showArrows: true,
-    showThumbs: false,
     swipeable: false,
     showStatus: false,
     stopOnHover: true,
   };
 
   return (
-    <Section id="gallery">
+    <Section id="gallery" ref={ref}>
       <MainContainer>
         <SectionTitle>Наші роботи</SectionTitle>
         <Carousel {...sliderSettings}>
           {gallery.map(item => (
-            <ImageWrapper>
+            <ImageWrapper key={item._id}>
               <Image
-                key={item._id}
                 loading="lazy"
                 src={item.beforePhoto.url}
                 alt={item.beforePhoto.alt || 'Зображення'}
