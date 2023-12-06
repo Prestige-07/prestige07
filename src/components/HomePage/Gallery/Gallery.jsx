@@ -40,6 +40,7 @@ export const Gallery = () => {
     swipeable: false,
     showStatus: false,
     stopOnHover: true,
+    showThumbs: false,
   };
 
   return (

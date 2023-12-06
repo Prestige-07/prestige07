@@ -49,8 +49,8 @@ export const AddressList = styled.ul`
 
 export const AddressItem = styled.li`
   display: flex;
-  &:nth-child(2) > a,
-  &:nth-child(3) > a {
+  &:nth-of-type(2) > a,
+  &:nth-of-type(3) > a {
     margin-left: 8px;
   }
 `;
