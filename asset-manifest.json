@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/prestige07/static/css/main.11371314.css",
-    "main.js": "/prestige07/static/js/main.60eea939.js",
+    "main.js": "/prestige07/static/js/main.16ad2938.js",
     "static/css/508.5421af64.chunk.css": "/prestige07/static/css/508.5421af64.chunk.css",
-    "static/js/508.626b5880.chunk.js": "/prestige07/static/js/508.626b5880.chunk.js",
+    "static/js/508.128bf11b.chunk.js": "/prestige07/static/js/508.128bf11b.chunk.js",
     "static/js/92.07ab0ec3.chunk.js": "/prestige07/static/js/92.07ab0ec3.chunk.js",
     "static/js/172.8f458cc8.chunk.js": "/prestige07/static/js/172.8f458cc8.chunk.js",
     "static/js/569.ccb2cacf.chunk.js": "/prestige07/static/js/569.ccb2cacf.chunk.js",
@@ -29,9 +29,9 @@
     "static/media/instagram.svg": "/prestige07/static/media/instagram.8ff7ce92ad753b591ed4c1d03e84c026.svg",
     "index.html": "/prestige07/index.html",
     "main.11371314.css.map": "/prestige07/static/css/main.11371314.css.map",
-    "main.60eea939.js.map": "/prestige07/static/js/main.60eea939.js.map",
+    "main.16ad2938.js.map": "/prestige07/static/js/main.16ad2938.js.map",
     "508.5421af64.chunk.css.map": "/prestige07/static/css/508.5421af64.chunk.css.map",
-    "508.626b5880.chunk.js.map": "/prestige07/static/js/508.626b5880.chunk.js.map",
+    "508.128bf11b.chunk.js.map": "/prestige07/static/js/508.128bf11b.chunk.js.map",
     "92.07ab0ec3.chunk.js.map": "/prestige07/static/js/92.07ab0ec3.chunk.js.map",
     "172.8f458cc8.chunk.js.map": "/prestige07/static/js/172.8f458cc8.chunk.js.map",
     "569.ccb2cacf.chunk.js.map": "/prestige07/static/js/569.ccb2cacf.chunk.js.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.11371314.css",
-    "static/js/main.60eea939.js"
+    "static/js/main.16ad2938.js"
   ]
 }
