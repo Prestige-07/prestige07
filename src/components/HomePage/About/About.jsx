@@ -19,6 +19,7 @@ export const About = () => {
     triggerOnce: true,
     threshold: 0,
   });
+
   return (
     <Section id="about">
       <MainContainer>
