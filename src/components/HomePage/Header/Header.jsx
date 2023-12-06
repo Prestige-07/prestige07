@@ -11,6 +11,8 @@ import {
   NavItem,
   Link,
   Contacts,
+  IconLink,
+  InstagramIcon,
   MenuButton,
   MenuIcon,
 } from './Header.styled';
@@ -37,6 +39,14 @@ export const Header = () => {
           >
             <Logo />
           </a>
+
+          <IconLink
+            href="https://www.instagram.com/avto_studio_0707"
+            target="_blank"
+          >
+            <InstagramIcon />
+            avto_studio_0707
+          </IconLink>
 
           <Navigation>
             <NavList>

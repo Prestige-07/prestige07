@@ -16,11 +16,10 @@ export const HeroSection = styled.section`
   animation: fadeIn 0.5s ease-in-out forwards;
 
   @media screen and (min-width: 768px) {
-    margin-top: 102px;
+    margin-top: 80px;
   }
 
   @media screen and (min-width: 1200px) {
-    margin-top: 80px;
     padding-bottom: 100px;
     max-width: 1600px;
     height: 750px;

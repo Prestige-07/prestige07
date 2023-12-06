@@ -14,6 +14,7 @@ import {
   AddressLink,
   MapIcon,
   PhoneIcon,
+  InstagramIcon,
   ScheduleTitle,
   ScheduleText,
 } from './Contacts.styled';
@@ -50,6 +51,15 @@ export const Contacts = () => {
                     <AddressDescription>Гаряча лінія:</AddressDescription>
                     <AddressLink href="tel:+380668838928">
                       +380668838928
+                    </AddressLink>
+                  </AddressItem>
+                  <AddressItem>
+                    <AddressLink
+                      href="https://www.instagram.com/avto_studio_0707"
+                      target="_blank"
+                    >
+                      <InstagramIcon />
+                      avto_studio_0707
                     </AddressLink>
                   </AddressItem>
                 </AddressList>
