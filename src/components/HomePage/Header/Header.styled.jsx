@@ -53,6 +53,11 @@ export const IconLink = styled.a`
 export const InstagramIcon = styled(Instagram)`
   width: 30px;
   height: 30px;
+
+  @media screen and (min-width: 767px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const Navigation = styled.nav`
