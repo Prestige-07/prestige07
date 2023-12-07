@@ -2,7 +2,6 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 
-// const instance = axios.create({ baseURL: 'http://localhost:3001/' });
 const instance = axios.create({
   baseURL: 'https://prestige07-backend.onrender.com/',
 });
