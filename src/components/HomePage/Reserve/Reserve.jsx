@@ -59,7 +59,6 @@ export const Reserve = () => {
       try {
         await axios.post(
           'https://prestige07-backend.onrender.com/api/orders',
-          // 'http://localhost:3001/api/orders',
           filteredValues
         );
         setOpenModal(true);
