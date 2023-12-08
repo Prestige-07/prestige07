@@ -1,8 +1,8 @@
 {
-  "name": "prestige07",
+  "name": "prestige-07",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Prestige-07.github.io/prestige07/",
+  "homepage": "https://prestige-07.com.ua/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
